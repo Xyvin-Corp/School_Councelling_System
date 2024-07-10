@@ -37,14 +37,14 @@ const theme = createTheme({
     h6: {
       fontFamily: "Roboto",
       fontSize: "14px",
-      fontWeight: 400,//fixed
-    },
-    h8: {
-      fontSize: "14px",
-      fontWeight: 400,//fixed
+      fontWeight: 400,
     },
     h7: {
       fontSize: "12px",
+      fontWeight: 400,
+    },
+    h8: {
+      fontSize: "14px",
       fontWeight: 400,
     },
   },

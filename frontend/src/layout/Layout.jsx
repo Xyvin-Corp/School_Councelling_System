@@ -36,26 +36,26 @@ import { ReactComponent as SettingsIcon } from "../assets/icons/SettingsIcon.svg
 import { ReactComponent as UserIcon } from "../assets/icons/UserIcon.svg";
 import { ReactComponent as StudentIcon } from "../assets/icons/StudentIcon.svg";
 import { ReactComponent as TeacherIcon } from "../assets/icons/TeacherIcon.svg";
+import { ReactComponent as LogoutIcon } from "../assets/icons/LogoutIcon.svg";
 const drawerWidth = 300;
 const subNavigation = [
-    { name: "Dashboard", to: "/", icon: <DashboardIcon /> },
-     {
-        name: "User Management",
-        icon: <UserIcon />,
-        subItems: [
-          { name: "Student", to: "/user/student", icon: <StudentIcon />  },
-          { name: "Counselor", to: "/",icon: <TeacherIcon />  },
-        ],
-      },
-    { name: "Cases & Sessions", to: "/", icon:<TeacherIcon />  },
-    { name: "Events", to: "/events", icon: <EventIcon /> },
-  
-    { name: "Report", to: "/report", icon: <ReportIcon /> },
-    { name: "Notification", to: "/notification", icon: <NotificationIcon /> },
-    { name: "Settings", to: "/settings", icon: <SettingsIcon /> },
-  ];
+  { name: "Dashboard", to: "/", icon: <DashboardIcon /> },
+  {
+    name: "User Management",
+    icon: <UserIcon />,
+    subItems: [
+      { name: "Student", to: "/user/student", icon: <StudentIcon /> },
+      { name: "Counselor", to: "/", icon: <TeacherIcon /> },
+    ],
+  },
+  { name: "Cases & Sessions", to: "/", icon: <TeacherIcon /> },
+  { name: "Events", to: "/events", icon: <EventIcon /> },
+
+  { name: "Report", to: "/report", icon: <ReportIcon /> },
+  { name: "Notification", to: "/notification", icon: <NotificationIcon /> },
+  { name: "Settings", to: "/settings", icon: <SettingsIcon /> },
+];
 const SimpleDialog = ({ open, onClose }) => {
-  
   const navigate = useNavigate();
   return (
     <Dialog
@@ -67,7 +67,6 @@ const SimpleDialog = ({ open, onClose }) => {
           top: 50,
           right: 50,
           m: 0,
-          height: "330px",
           width: "270px",
           borderRadius: "10px",
           boxShadow: "rgba(0, 0, 0, 0.25)",
@@ -75,7 +74,7 @@ const SimpleDialog = ({ open, onClose }) => {
       }}
     >
       <Stack spacing={2} borderRadius={3} padding="10px" paddingTop={"20px"}>
-        <Stack direction="row" alignItems="center" spacing={3} >
+        <Stack direction="row" alignItems="center" spacing={3}>
           <Avatar
             alt="Remy Sharp"
             src={profile}
@@ -83,51 +82,12 @@ const SimpleDialog = ({ open, onClose }) => {
           />
           <Box>
             <Typography variant="h3" color="#292D32" paddingBottom={1}>
-            Alex meian
+              Alex meian
             </Typography>
             <Typography variant="h4" color="rgba(41, 45, 50, 0.44)">
               Admin
             </Typography>
           </Box>
-        </Stack>
-        <Divider />
-        <Stack spacing={2} padding={1}>
-          <Stack
-            direction="row"
-            spacing={1}
-            paddingTop={2}
-            paddingBottom={2}
-            paddingLeft={1}
-            bgcolor={"#F4F4F5"}
-          >
-            {/* <EmailIcon /> */}
-            <Typography variant="h4">dd</Typography>
-          </Stack>
-          <Stack
-            direction="row"
-            paddingTop={2}
-            paddingBottom={2}
-            paddingLeft={1}
-            spacing={1}
-            bgcolor={"#F4F4F5"}
-          >
-            {/* <PhoneIcon /> */}
-            <Typography variant="h4">+91 7452136556</Typography>
-          </Stack>
-        </Stack>
-        <Divider />
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="center"
-          spacing={2}
-         
-          sx={{ cursor: "pointer" }}
-        >
-          {/* <LogoutIcon /> */}
-          <Typography variant="h4" color="#F22E22">
-            Logout
-          </Typography>
         </Stack>
       </Stack>
     </Dialog>
@@ -135,7 +95,6 @@ const SimpleDialog = ({ open, onClose }) => {
 };
 
 const Layout = (props) => {
-  
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -167,40 +126,18 @@ const Layout = (props) => {
   const handleDialogClose = () => {
     setDialogOpen(false);
   };
-
-//   const getCurrentPageName = () => {
-//     for (const item of subNavigation) {
-//       if (item.to === location.pathname) {
-//         return item.name;
-//       }
-//       if (item.subItems) {
-//         for (const subItem of item.subItems) {
-//           if (subItem.to === location.pathname) {
-//             return subItem.name;
-//           }
-//         }
-//       }
-//     }
-//     return "Dashboard";
-//   };
-
   const drawer = (
-    <div>
+    <div style={{ position: "relative", height: "100%" }}>
       <Toolbar sx={{ height: "88px" }}>
         <Box sx={{ display: "flex", alignItems: "center", padding: "15px" }}>
-        <img
-                src="/vite.svg"
-                alt="Vite Logo"
-                width={"48px"}
-                height="28px"
-              />
-              <Typography variant="h1" color={"#686465"} sx={{ ml: 1 }}>
-                <span style={{ color: "#0072BC" }}>AIIT</span>S
-              </Typography>
+          <img src="/vite.svg" alt="Vite Logo" width={"48px"} height="28px" />
+          <Typography variant="h1" color={"#686465"} sx={{ ml: 1 }}>
+            <span style={{ color: "#0072BC" }}>AIIT</span>
+          </Typography>
         </Box>
       </Toolbar>
       <Divider />
-      <List>
+      <List style={{ paddingBottom: "72px" }}>
         {subNavigation.map((item) =>
           item.name === "User Management" ? (
             <div key={item.name}>
@@ -211,8 +148,7 @@ const Layout = (props) => {
                     marginLeft: "20px",
                     marginRight: "10px",
                     color: "#5F6368",
-                    "&:hover": {  color: "#0072BC",
-                      backgroundColor: "#ECF6FC", },
+                    "&:hover": { color: "#0072BC", backgroundColor: "#ECF6FC" },
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: 24, marginRight: 1 }}>
@@ -242,12 +178,15 @@ const Layout = (props) => {
                           marginLeft: "40px",
                           marginRight: "40px",
                           color: "#5F6368",
-                      "&:hover": {  color: "#0072BC",
-                        backgroundColor: "#ECF6FC", },
+                          "&:hover": {
+                            color: "#0072BC",
+                            backgroundColor: "#ECF6FC",
+                          },
                         }}
-                      ><ListItemIcon sx={{ minWidth: 24, marginRight: 1 }}>
-                      {subItem.icon}
-                    </ListItemIcon>
+                      >
+                        <ListItemIcon sx={{ minWidth: 24, marginRight: 1 }}>
+                          {subItem.icon}
+                        </ListItemIcon>
                         <ListItemText
                           primary={subItem.name}
                           primaryTypographyProps={{
@@ -273,8 +212,7 @@ const Layout = (props) => {
                   marginLeft: "20px",
                   marginRight: "10px",
                   color: "#5F6368",
-                      "&:hover": {  color: "#0072BC",
-                        backgroundColor: "#ECF6FC", },
+                  "&:hover": { color: "#0072BC", backgroundColor: "#ECF6FC" },
                 }}
               >
                 <ListItemIcon sx={{ minWidth: 24, marginRight: 1 }}>
@@ -283,12 +221,44 @@ const Layout = (props) => {
                 <ListItemText
                   primary={item.name}
                   primaryTypographyProps={{ variant: "h6" }}
-                />{" "}
-                {/* <StyledBadge badgeContent={"20"}></StyledBadge> */}
+                />
               </ListItemButton>
             </ListItem>
           )
         )}
+      </List>
+      <List
+        style={{
+          position: "absolute",
+          bottom: 0,
+          width: "100%",
+        }}
+      >
+        <Divider />
+        <ListItem
+          sx={{ paddingBottom: "20px" }}
+          disablePadding
+          onClick={() => {
+            console.log("Logging out...");
+          }}
+        >
+          <ListItemButton
+            sx={{
+              marginLeft: "20px",
+              marginRight: "10px",
+              color: "#5F6368",
+              "&:hover": { color: "#0072BC", backgroundColor: "#ECF6FC" },
+            }}
+          >
+            <ListItemIcon sx={{ minWidth: 24, marginRight: 1 }}>
+              <LogoutIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="Logout"
+              primaryTypographyProps={{ variant: "h6" }}
+            />
+          </ListItemButton>
+        </ListItem>
       </List>
     </div>
   );
@@ -332,64 +302,42 @@ const Layout = (props) => {
             >
               <MenuIcon />
             </IconButton>
-            {/* <Typography
-              variant="h2"
-              color="#000"
-              noWrap
-              component="div"
-              display={isMobile && "none"}
-            >
-              {getCurrentPageName()}
-            </Typography> */}
-            {/* <Typography
-              variant="h5"
-              color={"#BDBDBD"}
-              sx={{ display: isMobile ? "none" : "flex", alignItems: "center" }}
-            >
-              {"Last synced "}
-              <span
-                style={{
-                  color: "#27AE60",
-                  marginLeft: "5px",
-                  marginRight: "5px",
-                }}
-              >
-                4 minutes ago
-              </span>{" "}
-              <SyncIcon />
-            </Typography> */}
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box display={isMobile && "none"}>
-              {" "}
-              {/* <StyledSearchbar /> */}
-            </Box>
+            <Box display={isMobile && "none"}> </Box>
             <NotificationIcon />
             <Box
               borderRadius="24px"
               padding={"5px 20px 5px 5px"}
-             bgcolor={'#F7F7F7'}
+              bgcolor={"#F7F7F7"}
               width={"200px"}
               color={"#000"}
               gap={1}
               display={"flex"}
               alignItems={"center"}
+              justifyContent={"space-between"}
               onClick={handleDialogOpen}
               sx={{ cursor: "pointer", flexShrink: 0, marginLeft: "10px" }}
             >
-              <Avatar
-                alt="Remy Sharp"
-                src={profile}
-                sx={{ width: 40, height: 40 }}
-              />
-              <Box>
-                <Typography variant="h5" color={"#292D32"}>
-                Alex meian
-                </Typography>
-                <Typography variant="h6" color={"rgba(41, 45, 50, 0.44)"}>
-                  Admin
-                </Typography>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Avatar
+                  alt="Remy Sharp"
+                  src={profile}
+                  sx={{ width: 40, height: 40 }}
+                />
+                <Box sx={{ marginLeft: "10px" }}>
+                  <Typography variant="h8" color={"#292D32"} display="block">
+                    Alex Meian
+                  </Typography>
+                  <Typography
+                    variant="h7"
+                    color={"rgba(41, 45, 50, 0.44)"}
+                    display="block"
+                  >
+                    Admin
+                  </Typography>
+                </Box>
               </Box>
               <ExpandMoreIcon />
             </Box>
@@ -460,4 +408,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
