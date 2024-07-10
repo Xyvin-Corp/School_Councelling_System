@@ -1,3 +1,4 @@
+import Layout from "./layout/Layout";
 
 
 function App() {
@@ -5,7 +6,9 @@ function App() {
 
   return (
     <>
-    halo
+    ggg
+    <Layout/>
+
     </>
   )
 }
