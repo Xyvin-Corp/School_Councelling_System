@@ -32,7 +32,7 @@ const theme = createTheme({
     },
     h5: {
       fontSize: "16px",
-      fontWeight: 500,
+      fontWeight: 400,
     },
     h6: {
       fontFamily: "Roboto",
