@@ -39,22 +39,22 @@ import { ReactComponent as TeacherIcon } from "../assets/icons/TeacherIcon.svg";
 import { ReactComponent as LogoutIcon } from "../assets/icons/LogoutIcon.svg";
 const drawerWidth = 300;
 const subNavigation = [
-  { name: "Dashboard", to: "/", icon: <DashboardIcon /> },
-  {
-    name: "User Management",
-    icon: <UserIcon />,
-    subItems: [
-      { name: "Student", to: "/user/student", icon: <StudentIcon /> },
-      { name: "Counselor", to: "/", icon: <TeacherIcon /> },
-    ],
-  },
-  { name: "Cases & Sessions", to: "/", icon: <TeacherIcon /> },
-  { name: "Events", to: "/events", icon: <EventIcon /> },
-
-  { name: "Report", to: "/report", icon: <ReportIcon /> },
-  { name: "Notification", to: "/notification", icon: <NotificationIcon /> },
-  { name: "Settings", to: "/settings", icon: <SettingsIcon /> },
-];
+    { name: "Dashboard", to: "/", icon: <DashboardIcon /> },
+     {
+        name: "User Management",
+        icon: <UserIcon />,
+        subItems: [
+          { name: "Student", to: "/user/student", icon: <StudentIcon />  },
+          { name: "Counselor", to: "/user/counselor",icon: <TeacherIcon />  },
+        ],
+      },
+    { name: "Cases & Sessions", to: "/casesstudies", icon:<TeacherIcon />  },
+    { name: "Events", to: "/events", icon: <EventIcon /> },
+  
+    { name: "Report", to: "/report", icon: <ReportIcon /> },
+    { name: "Notification", to: "/notification", icon: <NotificationIcon /> },
+    { name: "Settings", to: "/settings", icon: <SettingsIcon /> },
+  ];
 const SimpleDialog = ({ open, onClose }) => {
   const navigate = useNavigate();
   return (

@@ -1,10 +1,9 @@
-import React from 'react'
-import TextField from '@mui/material/TextField';
+import React from 'react';
 import { styled } from '@mui/material/styles';
-import InputAdornment from '@mui/material/InputAdornment';
-import BackupOutlinedIcon from '@mui/icons-material/BackupOutlined';
+import TextField from '@mui/material/TextField';
 
 const CustomTextField = styled(TextField)(({ theme }) => ({
+  width: '100%',
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: 'rgba(0, 0, 0, 0.2)',
@@ -28,20 +27,24 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 
-export const StyledEventIcon = ({ label, onChange, placeholder }) => {
+export const StyledMultilineTextField = ({ label, placeholder, rows = 4 }) => {
+  const [value, setValue] = React.useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    console.log('Text changed:', event.target.value);
+  };
+
   return (
     <CustomTextField
-      fullWidth
       label={label}
-      onChange={onChange}
       placeholder={placeholder}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end">
-            <BackupOutlinedIcon />
-          </InputAdornment>
-        ),
-      }}
+      multiline
+      rows={rows}
+      value={value}
+      onChange={handleChange}
+      variant="outlined"
+      fullWidth
     />
   );
 };

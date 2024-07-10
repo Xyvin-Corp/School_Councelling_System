@@ -1,7 +1,10 @@
+import React from 'react';
 import { StyledButton } from "./ui/StyledButton";
 import { StyledTextField } from "./ui/StyledTextField";
 import { StyledDatePicker as StyledCalender } from "./ui/StyledCalender";
-import { StyledEventIcon } from "./ui/StyledEventIcon";
+import { StyledTime } from "./ui/StyledTime";
+import { StyledMultilineTextField } from './ui/StyledMultilineTextField ';
+import { StyledEventUpload } from './ui/StyledEventUpload';
 import { userColumns, userData } from "./assets/json/TableData";
 import { useState } from "react";
 import StyledTable from "./ui/StyledTable";
@@ -37,10 +40,12 @@ function App() {
       <StyledButton name="Secondary" variant="secondary">
         Secondary Button
       </StyledButton>
-      <StyledEventIcon
-        label="Upload your Image here"
+      <StyledEventUpload
+        label="Upload your Image here" 
         placeholder="Click icon to upload event"
       />
+      <StyledTime label="Select Time" placeholder="HH:MM"/>
+      <StyledMultilineTextField label="Add Description" placeholder="Add description in less than 500 words" rows={6} />
       <StyledTable
         columns={userColumns}
         data={userData}
