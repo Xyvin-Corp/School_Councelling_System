@@ -44,10 +44,10 @@ const subNavigation = [
         icon: <UserIcon />,
         subItems: [
           { name: "Student", to: "/user/student", icon: <StudentIcon />  },
-          { name: "Counselor", to: "/",icon: <TeacherIcon />  },
+          { name: "Counselor", to: "/user/counselor",icon: <TeacherIcon />  },
         ],
       },
-    { name: "Cases & Sessions", to: "/", icon:<TeacherIcon />  },
+    { name: "Cases & Sessions", to: "/casesstudies", icon:<TeacherIcon />  },
     { name: "Events", to: "/events", icon: <EventIcon /> },
   
     { name: "Report", to: "/report", icon: <ReportIcon /> },
