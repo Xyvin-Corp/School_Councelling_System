@@ -132,7 +132,7 @@ const Layout = (props) => {
         <Box sx={{ display: "flex", alignItems: "center", padding: "15px" }}>
           <img src="/vite.svg" alt="Vite Logo" width={"48px"} height="28px" />
           <Typography variant="h1" color={"#686465"} sx={{ ml: 1 }}>
-            <span style={{ color: "#0072BC" }}>AIIT</span>
+            <span style={{ color: "#0072BC" }}>AIIT</span>S
           </Typography>
         </Box>
       </Toolbar>
