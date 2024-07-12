@@ -1,12 +1,9 @@
+import { Box, Grid, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { Box, Typography, Tabs, Tab } from "@mui/material";
+import UserCard from "../ui/UserCard";
 import StyledTable from "../ui/StyledTable";
 import { userColumns, userData } from "../assets/json/TableData";
-import AddCounselor from "../ui/AddCounselor";
-import { useNavigate } from "react-router-dom";
-
-export const Counselor = () => {
-  const navigate = useNavigate();
+const CounselorSinglePage = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
 
@@ -17,15 +14,29 @@ export const Counselor = () => {
 
   const handleView = (id) => {
     console.log("View item:", id);
-    navigate(`/user/counselor/${id}`);
   };
-
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
-
+  const data = {
+    name: "Prabodhan Fitzgerald",
+    title: "Designation",
+    phone: "9865432123",
+    email: "Prabfitz@gmail.com",
+    
+  };
   return (
     <>
+      <Box padding={"30px"} bgcolor={"#FFFFFF"}>
+        <Typography variant="h4" color={"#4A4647"}>
+          Counselor/
+        </Typography>
+      </Box>{" "}
+      <Grid container spacing={2} padding={4}>
+        <Grid item md={4} spacing={2}>
+          <UserCard user={data}/>
+        </Grid>
+      </Grid>
       <Tabs
         value={selectedTab}
         onChange={handleChange}
@@ -52,9 +63,9 @@ export const Counselor = () => {
           },
         }}
       >
-        <Tab label="Counselor" />
-        <Tab label="Add Counselor" />
-        <Tab label="Add Bulk" />
+        <Tab label="Counselling Sessions" />
+        <Tab label="Reports" />
+        <Tab label="Reviews" />
       </Tabs>
       <Box padding="30px" marginBottom={4}>
         {selectedTab === 0 && (
@@ -65,9 +76,11 @@ export const Counselor = () => {
             onView={handleView}
           />
         )}
-        {selectedTab === 1 && <AddCounselor />}
+        {selectedTab === 1 &&<Typography>Not Found</Typography> }
         {selectedTab === 2 && <Typography>Not Found</Typography>}
       </Box>
     </>
   );
 };
+
+export default CounselorSinglePage;

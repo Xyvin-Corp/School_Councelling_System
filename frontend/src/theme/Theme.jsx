@@ -47,6 +47,10 @@ const theme = createTheme({
       fontSize: "14px",
       fontWeight: 400,
     },
+    h9: {
+      fontSize: "9px",
+      fontWeight: 600,
+    },
   },
   components: {
     MuiCssBaseline: {

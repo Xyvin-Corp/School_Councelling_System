@@ -1,18 +1,20 @@
-import React from 'react';
+import React from "react";
 import { StyledButton } from "./ui/StyledButton";
 import { StyledTextField } from "./ui/StyledTextField";
 import { StyledDatePicker as StyledCalender } from "./ui/StyledCalender";
 import { StyledTime } from "./ui/StyledTime";
-import { StyledMultilineTextField } from './ui/StyledMultilineTextField ';
-import { StyledEventUpload } from './ui/StyledEventUpload';
+import { StyledMultilineTextField } from "./ui/StyledMultilineTextField ";
+import { StyledEventUpload } from "./ui/StyledEventUpload";
 import { userColumns, userData } from "./assets/json/TableData";
 import { useState } from "react";
 import StyledTable from "./ui/StyledTable";
 import StyledSelectField from "./ui/StyledSelectField";
 import StyledSwitch from "./ui/StyledSwitch";
-import UserCard from './ui/UserCard';
-import Reviewcard from './ui/Reviewcard';
-import Review from './ui/Review';
+import UserCard from "./ui/UserCard";
+import Reviewcard from "./ui/Reviewcard";
+import Review from "./ui/Review";
+import DashboardCard from "./ui/DashboardCard";
+import CaseCard from "./ui/CaseCard";
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);
   const handleSelectionChange = (newSelectedIds) => {
@@ -44,11 +46,15 @@ function App() {
         Secondary Button
       </StyledButton>
       <StyledEventUpload
-        label="Upload your Image here" 
+        label="Upload your Image here"
         placeholder="Click icon to upload event"
       />
-      <StyledTime label="Select Time" placeholder="HH:MM"/>
-      <StyledMultilineTextField label="Add Description" placeholder="Add description in less than 500 words" rows={6} />
+      <StyledTime label="Select Time" placeholder="HH:MM" />
+      <StyledMultilineTextField
+        label="Add Description"
+        placeholder="Add description in less than 500 words"
+        rows={6}
+      />
       <StyledTable
         columns={userColumns}
         data={userData}
@@ -57,7 +63,8 @@ function App() {
       />
       <StyledSelectField options={options} />{" "}
       <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />
-      <UserCard />{" "}  <Reviewcard />{" "} <Review />
+      <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
+      <CaseCard />
     </>
   );
 }

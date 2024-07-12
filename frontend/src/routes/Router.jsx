@@ -7,8 +7,12 @@ import { Counselor } from "../pages/Counselor";
 import CasesSection from "../pages/CasesSection";
 import Events from "../pages/Events";
 import Settings from "../pages/Settings";
-import Report from '../pages/Report';
+import Report from "../pages/Report";
 import Notification from "../pages/Notification";
+import CounselorSinglePage from "../pages/CounselorSinglePage";
+import StudentSinglePage from "../pages/StudentSinglePage";
+import SessionPage from "../pages/SessionPage";
+import SessionSinglePage from "../pages/SessionSinglePage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,17 +24,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/app",
-    element: (
-    
-        <App />
-    
-    ),
+    element: <App />,
   },
   {
     path: "/user/student",
     element: (
       <Layout>
         <StudentPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/user/student/:id",
+    element: (
+      <Layout>
+        <StudentSinglePage />
       </Layout>
     ),
   },
@@ -43,10 +51,34 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/user/counselor/:id",
+    element: (
+      <Layout>
+        <CounselorSinglePage />
+      </Layout>
+    ),
+  },
+  {
     path: "/casesstudies",
     element: (
       <Layout>
         <CasesSection />
+      </Layout>
+    ),
+  },
+  {
+    path: "/cases/case/:id",
+    element: (
+      <Layout>
+        <SessionPage />
+      </Layout>
+    ),
+  },
+  {
+    path: "/cases/session/:id",
+    element: (
+      <Layout>
+        <SessionSinglePage />
       </Layout>
     ),
   },

@@ -33,6 +33,7 @@ const StyledTableCell = styled(TableCell)`
   }
   &.${tableCellClasses.body} {
     font-size: 14px;
+    background-color: #fff;
     font-family: "Roboto", sans-serif;
     padding: 16px;
     font-weight: 400;
@@ -126,7 +127,7 @@ const StyledTable = ({
   };
 
   return (
-    <Box>
+    <Box bgcolor={"white"} borderRadius={"16px"}>
       <TableContainer sx={{ border: "none" }}>
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
@@ -166,7 +167,8 @@ const StyledTable = ({
                 {columns.map((column) => (
                   <StyledTableCell
                     key={column.field}
-                    padding={column.padding || "normal"}
+                    padding={column.padding || "normal"}sx={{ cursor: "pointer" }}
+                    onClick={() => handleRowClick(row.id)}
                   >
                     {column.field === "status" ? (
                       <Box
@@ -192,7 +194,9 @@ const StyledTable = ({
                     )}
                   </StyledTableCell>
                 ))}
+
                 <StyledTableCell padding="normal">
+                  {" "}
                   <IconButton
                     aria-controls="simple-view"
                     aria-haspopup="true"
@@ -200,10 +204,8 @@ const StyledTable = ({
                   >
                     <ViewIcon />
                   </IconButton>
-                </StyledTableCell>
-                <StyledTableCell padding="normal">
                   <IconButton
-                    aria-controls="row-menu"
+                    aria-controls="simple-menu"
                     aria-haspopup="true"
                     onClick={(event) => handleMenuOpen(event, row.id)}
                   >
