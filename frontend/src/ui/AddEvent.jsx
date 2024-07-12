@@ -28,30 +28,29 @@ export default function AddEvent() {
         </Grid>
 
         <Grid item xs={6}>
-          <Box sx={{ marginBottom: 3 }}>
+        
             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: 'bold' }}>Name</Typography>
             <StyledTextField label="Enter your E-mail ID" />
-          </Box>
-          <Box sx={{ marginBottom: 3 }}>
+          
+          
             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: 'bold' }}>Time</Typography>
             <StyledTime label="Select Time" />
-          </Box>
-          <Box>
+          
             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: 'bold' }}>Virtual Platform</Typography>
             <StyledSelectField label="Virtual Platform" />
-          </Box>
+       
         </Grid>
 
         <Grid item xs={6}>
          
             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: 'bold' }}>Date</Typography>
             <StyledCalender label="Select Date from Calender" />
-          </Grid>
-          <Grid item xs={6}>
+          
+          
             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: 'bold' }}>Event Image</Typography>
             <StyledEventUpload label="Upload your Image here" />
-          </Grid>
-          <Grid item xs={6}>
+         
+         
             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: 'bold' }}>Event Link</Typography>
             <StyledTextField label="Add Meeting Link here" />
          
