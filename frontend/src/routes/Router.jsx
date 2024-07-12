@@ -13,6 +13,7 @@ import CounselorSinglePage from "../pages/CounselorSinglePage";
 import StudentSinglePage from "../pages/StudentSinglePage";
 import SessionPage from "../pages/SessionPage";
 import SessionSinglePage from "../pages/SessionSinglePage";
+import EventsSinglepage from "../pages/EventsSinglepage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -87,6 +88,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Events />
+      </Layout>
+    ),
+  },
+  {
+    path: "/events/:id",
+    element: (
+      <Layout>
+        <EventsSinglepage />
       </Layout>
     ),
   },

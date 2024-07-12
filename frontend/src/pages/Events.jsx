@@ -2,8 +2,12 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { userColumns, userData } from "../assets/json/TableData";
 import StyledTable from "../ui/StyledTable";
+import AddEvent from "../ui/AddEvent";
+import { useNavigate } from "react-router-dom";
 
 export default function Events() {
+
+  const navigate=useNavigate();
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
 
@@ -14,6 +18,7 @@ export default function Events() {
 
   const handleView = (id) => {
     console.log("View item:", id);
+    navigate(`/events/${id}`);
   };
 
   const handleChange = (event, newValue) => {
@@ -60,7 +65,7 @@ export default function Events() {
             onView={handleView}
           />
         )}
-        {selectedTab === 1 && <Typography>Not Found</Typography>}
+        {selectedTab === 1 && <AddEvent/>}
       </Box>
     </>
   );
