@@ -53,7 +53,7 @@ const CustomTextField = styled(TextField)({
   },
 });
 
-export const StyledDatePicker = ({ label, onChange, placeholder }) => {
+export const StyledCalender = ({ label, onChange, placeholder }) => {
   const [selectedDate, setSelectedDate] = React.useState(null);
 
   const handleDateChange = (date) => {

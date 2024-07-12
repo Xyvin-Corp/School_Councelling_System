@@ -42,7 +42,7 @@ const ButtonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
   ${buttonVariants}
   ${disabledStyles}

@@ -38,8 +38,10 @@ const StyledSwitch = ({ checked, onChange, variant, disabled }) => {
       onChange(e);
     }
   };
-
+  
+  
   return (
+    
     <SwitchContainer variant={variant} checked={checked} disabled={disabled}>
       <Input
         type="checkbox"
