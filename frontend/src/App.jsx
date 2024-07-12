@@ -10,6 +10,10 @@ import { useState } from "react";
 import StyledTable from "./ui/StyledTable";
 import StyledSelectField from "./ui/StyledSelectField";
 import StyledSwitch from "./ui/StyledSwitch";
+import CouncellingCard from './ui/CouncellingCard';
+import DescriptionCard from './ui/DescriptionCard';
+
+
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);
   const handleSelectionChange = (newSelectedIds) => {
@@ -54,6 +58,8 @@ function App() {
       />
       <StyledSelectField options={options} />{" "}
       <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />
+      <CouncellingCard></CouncellingCard>
+      <DescriptionCard/>
     </>
   );
 }
