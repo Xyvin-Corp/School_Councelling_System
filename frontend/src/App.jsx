@@ -1,43 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyledButton } from "./ui/StyledButton";
 import { StyledTextField } from "./ui/StyledTextField";
-import { StyledDatePicker as StyledCalender } from "./ui/StyledCalender";
-import { StyledTime } from "./ui/StyledTime";
 import { StyledMultilineTextField } from './ui/StyledMultilineTextField ';
+import { StyledCalender } from "./ui/StyledCalender";
+import { StyledTime } from "./ui/StyledTime";
 import { StyledEventUpload } from './ui/StyledEventUpload';
 import { userColumns, userData } from "./assets/json/TableData";
-import { useState } from "react";
 import StyledTable from "./ui/StyledTable";
 import StyledSelectField from "./ui/StyledSelectField";
 import StyledSwitch from "./ui/StyledSwitch";
 import CouncellingCard from './ui/CouncellingCard';
 import DescriptionCard from './ui/DescriptionCard';
-
+import AddEvent from './ui/AddEvent';
 
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
+
   const handleSelectionChange = (newSelectedIds) => {
     setSelectedRows(newSelectedIds);
     console.log("Selected items:", newSelectedIds);
   };
+
   const options = [
     { value: "option1", label: "Option 1" },
     { value: "option2", label: "Option 2" },
     { value: "option3", label: "Option 3" },
   ];
-  const [isChecked, setIsChecked] = useState(false);
 
   const handleSwitchChange = (event) => {
     setIsChecked(event.target.checked);
   };
+
   const handleView = (id) => {
     console.log("View item:", id);
   };
+
   return (
     <>
       <StyledTextField label="firstname" />
       <StyledTextField label="lastname" />
-      <StyledCalender />
+      <StyledCalender label="Select Date" />
       <StyledButton name="Primary" variant="primary">
         Primary Button
       </StyledButton>
@@ -45,7 +48,7 @@ function App() {
         Secondary Button
       </StyledButton>
       <StyledEventUpload
-        label="Upload your Image here" 
+        label="Upload your Image here"
         placeholder="Click icon to upload event"
       />
       <StyledTime label="Select Time" placeholder="HH:MM"/>
@@ -56,10 +59,11 @@ function App() {
         onSelectionChange={handleSelectionChange}
         onView={handleView}
       />
-      <StyledSelectField options={options} />{" "}
+      <StyledSelectField options={options} />
       <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />
-      <CouncellingCard></CouncellingCard>
-      <DescriptionCard/>
+      <CouncellingCard />
+      <DescriptionCard />
+      <AddEvent />
     </>
   );
 }
