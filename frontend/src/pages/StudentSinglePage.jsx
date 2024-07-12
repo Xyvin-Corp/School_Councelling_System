@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import UserCard from "../ui/UserCard";
 import StyledTable from "../ui/StyledTable";
 import { userColumns, userData } from "../assets/json/TableData";
+import imag from "../assets/images/staff.png";
 const StudentSinglePage = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
@@ -24,6 +25,14 @@ const StudentSinglePage = () => {
     title: "XI A",
     phone: "+1234567890",
     email: "john.doe@example.com",
+    img: imag,
+  };
+  const user = {
+    name: "John Doe",
+    title: "XI A",
+    phone: "+1234567890",
+    email: "john.doe@example.com",
+    
   };
   return (
     <>
@@ -32,9 +41,12 @@ const StudentSinglePage = () => {
           Student List / John Doe
         </Typography>
       </Box>{" "}
-      <Grid container spacing={2} padding={4}>
+      <Grid container spacing={4} padding={4}>
         <Grid item md={4} spacing={2}>
           <UserCard user={data} />
+        </Grid>
+        <Grid item md={4} spacing={2}>
+          <UserCard user={user} />
         </Grid>
       </Grid>
       <Tabs

@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import UserCard from "../ui/UserCard";
 import StyledTable from "../ui/StyledTable";
 import { userColumns, userData } from "../assets/json/TableData";
+import Review from "../ui/Review";
+import imag from "../assets/images/staff.png";
+import CounsellingTypeCard from "../ui/CouncellingCard";
+import DescriptionCard from "../ui/DescriptionCard";
 const CounselorSinglePage = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
@@ -23,18 +27,24 @@ const CounselorSinglePage = () => {
     title: "Designation",
     phone: "9865432123",
     email: "Prabfitz@gmail.com",
-    
+    img: imag,
   };
   return (
     <>
       <Box padding={"30px"} bgcolor={"#FFFFFF"}>
         <Typography variant="h4" color={"#4A4647"}>
-          Counselor/
+          Counselor / Prabodhan Fitzgerald
         </Typography>
       </Box>{" "}
-      <Grid container spacing={2} padding={4}>
+      <Grid container spacing={4} padding={4} >
         <Grid item md={4} spacing={2}>
-          <UserCard user={data}/>
+          <UserCard user={data} />
+        </Grid>
+        <Grid item md={4} spacing={2}>
+          <CounsellingTypeCard/>
+        </Grid>
+        <Grid item md={4} spacing={2}>
+          <DescriptionCard/>
         </Grid>
       </Grid>
       <Tabs
@@ -76,8 +86,22 @@ const CounselorSinglePage = () => {
             onView={handleView}
           />
         )}
-        {selectedTab === 1 &&<Typography>Not Found</Typography> }
-        {selectedTab === 2 && <Typography>Not Found</Typography>}
+        {selectedTab === 1 && (
+          <Typography>
+            {" "}
+            <StyledTable
+              columns={userColumns}
+              data={userData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />
+          </Typography>
+        )}
+        {selectedTab === 2 && (
+          <Typography>
+            <Review />
+          </Typography>
+        )}
       </Box>
     </>
   );

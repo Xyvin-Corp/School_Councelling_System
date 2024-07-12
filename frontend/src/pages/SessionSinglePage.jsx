@@ -2,7 +2,7 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import UserCard from "../ui/UserCard";
 import CaseCard from "../ui/CaseCard";
-
+import imag from "../assets/images/staff.png";
 const SessionSinglePage = () => {
   const data = {
     id: 'STD920282',
@@ -10,6 +10,7 @@ const SessionSinglePage = () => {
     title: "XI A",
     phone: "+1234567890",
     email: "john.doe@example.com",
+    img: imag,
   };
 
   const counselorData = {
@@ -17,6 +18,7 @@ const SessionSinglePage = () => {
     title: "Designation",
     phone: "9865432123",
     email: "Prabfitz@gmail.com",
+    img: imag,
   };
 
   return (

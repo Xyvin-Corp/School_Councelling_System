@@ -152,7 +152,7 @@ const StyledTable = ({
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((row) => (
+            {data?.map((row) => (
               <StyledTableRow
                 role="checkbox"
                 key={row.id}

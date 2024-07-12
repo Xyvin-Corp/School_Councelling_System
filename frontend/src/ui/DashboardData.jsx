@@ -2,7 +2,7 @@ import React from "react";
 import DashboardCard from "./DashboardCard";
 import { Grid, Typography } from "@mui/material";
 import sampleData from "../assets/json/DashboardData";
-import eventData from "../assets/json/EventData"; // Assuming you have another JSON file for events
+import eventData from "../assets/json/EventData"; 
 
 const DashboardData = () => {
   return (

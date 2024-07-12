@@ -15,6 +15,10 @@ import Reviewcard from "./ui/Reviewcard";
 import Review from "./ui/Review";
 import DashboardCard from "./ui/DashboardCard";
 import CaseCard from "./ui/CaseCard";
+import CouncellingCard from './ui/CouncellingCard';
+import DescriptionCard from './ui/DescriptionCard';
+
+
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);
   const handleSelectionChange = (newSelectedIds) => {
@@ -63,6 +67,8 @@ function App() {
       />
       <StyledSelectField options={options} />{" "}
       <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />
+      <CouncellingCard></CouncellingCard>
+      <DescriptionCard/>
       <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
       <CaseCard />
     </>
