@@ -1,12 +1,21 @@
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Stack, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { userColumns, userData } from "../assets/json/TableData";
 import StyledTable from "../ui/StyledTable";
-
+import StyledSearchbar from "../ui/StyledSearchbar";
+import { ReactComponent as FilterIcon } from "../assets/icons/FilterIcon.svg";
 export default function Report() {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
+  const [filterOpen, setFilterOpen] = useState(false);
 
+  const handleOpenFilter = () => {
+    setFilterOpen(true);
+  };
+
+  const handleCloseFilter = () => {
+    setFilterOpen(false);
+  };
   const handleSelectionChange = (newSelectedIds) => {
     setSelectedRows(newSelectedIds);
     console.log("Selected items:", newSelectedIds);
@@ -50,7 +59,32 @@ export default function Report() {
       >
         <Tab label="Reports" />
         <Tab label="Add Report" />
-      </Tabs>
+      </Tabs>{" "}
+      <Stack
+        direction={"row"}
+        justifyContent={"end"}
+        padding={3}
+        alignItems={"center"}
+      >
+       
+        <Stack direction={"row"} spacing={2}>
+          <StyledSearchbar />
+          <Box
+            bgcolor={"#FFFFFF"}
+            borderRadius={"50%"}
+            width={"48px"}
+            height={"48px"}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="1px solid rgba(0, 0, 0, 0.12)"
+            onClick={handleOpenFilter}
+            style={{ cursor: "pointer" }}
+          >
+            <FilterIcon />
+          </Box>
+        </Stack>
+      </Stack>
       <Box padding="30px" marginBottom={4}>
         {selectedTab === 0 && (
           <StyledTable

@@ -1,8 +1,8 @@
 import React from "react";
-import DashboardCard from "./DashboardCard";
 import { Grid, Typography } from "@mui/material";
 import sampleData from "../assets/json/DashboardData";
 import eventData from "../assets/json/EventData"; 
+import DashboardCard from "../ui/DashboardCard";
 
 const DashboardData = () => {
   return (

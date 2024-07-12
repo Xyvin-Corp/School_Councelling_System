@@ -11,12 +11,12 @@ import StyledSelectField from "./ui/StyledSelectField";
 import StyledSwitch from "./ui/StyledSwitch";
 import UserCard from "./ui/UserCard";
 import Reviewcard from "./ui/Reviewcard";
-import Review from "./ui/Review";
 import DashboardCard from "./ui/DashboardCard";
 import CaseCard from "./ui/CaseCard";
 import CouncellingCard from './ui/CouncellingCard';
 import DescriptionCard from './ui/DescriptionCard';
-import AddEvent from './ui/AddEvent';
+import AddEvent from "./components/AddEvent";
+import Review from "./components/Review";
 
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);

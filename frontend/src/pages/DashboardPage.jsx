@@ -1,11 +1,11 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import DashboardData from "../ui/DashboardData";
 import { userColumns, userData } from "../assets/json/TableData";
 import StyledTable from "../ui/StyledTable";
 import StyledSearchbar from "../ui/StyledSearchbar";
 import { ReactComponent as FilterIcon } from "../assets/icons/FilterIcon.svg";
 import StyledFilter from "../components/StyledFilter";
+import DashboardData from "../components/DashboardData";
 const DashboardPage = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [filterOpen, setFilterOpen] = useState(false);

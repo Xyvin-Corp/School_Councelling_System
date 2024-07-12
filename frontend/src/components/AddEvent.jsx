@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Box, Typography, Grid, Stack } from "@mui/material";
-import { StyledTextField } from "./StyledTextField";
-import { StyledTime } from "./StyledTime";
-import StyledSelectField from "./StyledSelectField";
-import { StyledEventUpload } from "./StyledEventUpload";
-import { StyledButton } from "./StyledButton";
-import { StyledMultilineTextField } from "./StyledMultilineTextField ";
-import { StyledCalender } from "./StyledCalender";
+import { StyledTextField } from "../ui/StyledTextField";
+import { StyledTime } from "../ui/StyledTime";
+import StyledSelectField from "../ui/StyledSelectField";
+import { StyledEventUpload } from "../ui/StyledEventUpload";
+import { StyledButton } from "../ui/StyledButton";
+import { StyledMultilineTextField } from "../ui/StyledMultilineTextField ";
+import { StyledCalender } from "../ui/StyledCalender";
 import StyledSwitch from "/src/ui/StyledSwitch.jsx";
 
 export default function AddEvent() {

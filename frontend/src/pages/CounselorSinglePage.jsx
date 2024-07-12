@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import UserCard from "../ui/UserCard";
 import StyledTable from "../ui/StyledTable";
 import { userColumns, userData } from "../assets/json/TableData";
-import Review from "../ui/Review";
+
 import imag from "../assets/images/staff.png";
 import CounsellingTypeCard from "../ui/CouncellingCard";
 import DescriptionCard from "../ui/DescriptionCard";
+import Review from "../components/Review";
 const CounselorSinglePage = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);

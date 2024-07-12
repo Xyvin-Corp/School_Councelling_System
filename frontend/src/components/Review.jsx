@@ -2,7 +2,7 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import reviews from '../assets/json/ReviewData';
-import ReviewCard from "./Reviewcard";
+import ReviewCard from "../ui/Reviewcard";
 
 const Review = () => {
   return (

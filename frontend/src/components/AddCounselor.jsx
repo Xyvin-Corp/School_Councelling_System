@@ -1,11 +1,11 @@
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import StyledInput from "./StyledInput";
-import StyledSelectField from "./StyledSelectField";
-import { StyledEventUpload } from "./StyledEventUpload";
-import { StyledMultilineTextField } from "./StyledMultilineTextField ";
-import StyledSwitch from "./StyledSwitch";
-import { StyledButton } from "./StyledButton";
+import StyledInput from "../ui/StyledInput";
+import StyledSelectField from "../ui/StyledSelectField";
+import { StyledEventUpload } from "../ui/StyledEventUpload";
+import { StyledMultilineTextField } from "../ui/StyledMultilineTextField ";
+import StyledSwitch from "../ui/StyledSwitch";
+import { StyledButton } from "../ui/StyledButton";
 
 const AddCounselor = () => {
   return (
