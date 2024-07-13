@@ -117,9 +117,17 @@ const StyledTable = ({
       case "inactive":
         return "green";
       case "send":
-        return "blue";
-      case "rejected":
-        return "rejected";
+        return "#2E7D32";
+      case "pending":
+        return "#BFBABA";
+      case "upcoming": 
+        return "#0072BC";
+      case "ongoing": 
+        return "green";
+      case "closed": 
+        return "#938F8F";
+      case "completed": 
+        return "#BFBABA";
       default:
         return "default";
     }

@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { userColumns, userData } from "../../../assets/json/TableData";
+import { userColumns, userData } from "../../../assets/json/CaseSectionCaseData";
 import { useNavigate } from "react-router-dom";
 import StyledTable from "../../../ui/StyledTable";
 
