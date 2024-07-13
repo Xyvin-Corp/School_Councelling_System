@@ -47,6 +47,7 @@ export const Counselor = () => {
           },
         }}
         sx={{
+
           bgcolor: "white",
           paddingTop: "20px",
           "& .MuiTabs-indicator": {
@@ -55,6 +56,7 @@ export const Counselor = () => {
           "& .MuiTab-root": {
             textTransform: "none",
             fontWeight: 600,
+            fontSize:'16px'
           },
           "& .Mui-selected": {
             color: "#0072BC",

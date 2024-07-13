@@ -67,6 +67,7 @@ const CounselorSinglePage = () => {
           },
           "& .MuiTab-root": {
             textTransform: "none",
+            fontSize:'16px', 
             fontWeight: 600,
           },
           "& .Mui-selected": {

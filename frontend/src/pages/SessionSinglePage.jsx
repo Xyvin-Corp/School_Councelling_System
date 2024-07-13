@@ -31,12 +31,12 @@ const SessionSinglePage = () => {
       <Grid container spacing={2} padding={4}>
         <Grid item md={4}>
           <Stack marginBottom={4}> <Box marginBottom={4}>
-            <Typography variant="h8" fontWeight="900" color={"#828282"}>
+            <Typography variant="h6" fontWeight="900" color={"#828282"}>
               Student
             </Typography></Box>
             <UserCard user={data} />{" "}
             <Box marginBottom={4} marginTop={4}>
-            <Typography variant="h8" fontWeight="900" color={"#828282"}>
+            <Typography variant="h6" fontWeight="900" color={"#828282"}>
               Counselor
             </Typography></Box>
             <UserCard user={counselorData} />

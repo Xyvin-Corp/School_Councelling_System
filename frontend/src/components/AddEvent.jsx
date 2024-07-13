@@ -19,15 +19,22 @@ export default function AddEvent() {
     <Box sx={{ padding: 3 }} bgcolor={"white"} borderRadius={"4px"}>
       <Grid container spacing={4}>
         <Grid item xs={12}>
-          <Typography variant="h5" sx={{ marginBottom: 2, fontWeight: "bold" }}>
+          <Typography
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
+          >
             Type of Event
           </Typography>
           <StyledSelectField />
         </Grid>
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Name
           </Typography>
@@ -35,8 +42,10 @@ export default function AddEvent() {
         </Grid>{" "}
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Date
           </Typography>
@@ -44,8 +53,10 @@ export default function AddEvent() {
         </Grid>
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Time
           </Typography>
@@ -53,8 +64,10 @@ export default function AddEvent() {
         </Grid>{" "}
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Event Image
           </Typography>
@@ -62,8 +75,10 @@ export default function AddEvent() {
         </Grid>
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Virtual Platform
           </Typography>
@@ -71,23 +86,32 @@ export default function AddEvent() {
         </Grid>
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Add Link
           </Typography>
           <StyledTextField label="Add Meeting Link here" />
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h5" sx={{ marginBottom: 2, fontWeight: "bold" }}>
+          <Typography
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
+          >
             Select Report
           </Typography>
           <StyledSelectField fullWidth />
         </Grid>
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Add Chief Guest Name
           </Typography>
@@ -95,8 +119,10 @@ export default function AddEvent() {
         </Grid>{" "}
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Add Chief Guest Designation
           </Typography>
@@ -104,8 +130,10 @@ export default function AddEvent() {
         </Grid>
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Upload Chief Guest Image
           </Typography>
@@ -113,8 +141,10 @@ export default function AddEvent() {
         </Grid>{" "}
         <Grid item xs={6}>
           <Typography
-            variant="subtitle1"
-            sx={{ marginBottom: 1, fontWeight: "bold" }}
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
           >
             Add Description
           </Typography>
@@ -125,11 +155,15 @@ export default function AddEvent() {
         </Grid>
         <Grid item xs={6}>
           <Stack direction={"row"} justifyContent={"space-between"}>
-            <Typography variant="subtitle1">Activate</Typography>
-            <StyledSwitch
-              checked={isChecked}
-              onChange={handleSwitchChange}
-            />{" "}
+            <Typography
+              sx={{ marginBottom: 1 }}
+              variant="h6"
+              fontWeight={500}
+              color={"#333333"}
+            >
+              Activate
+            </Typography>
+            <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />{" "}
           </Stack>
         </Grid>
         <Grid item xs={6}></Grid> <Grid item xs={6}></Grid>

@@ -81,10 +81,10 @@ const SimpleDialog = ({ open, onClose }) => {
             sx={{ width: 60, height: 60 }}
           />
           <Box>
-            <Typography variant="h3" color="#292D32" paddingBottom={1}>
+            <Typography variant="h6" color="#292D32" paddingBottom={1}>
               Alex meian
             </Typography>
-            <Typography variant="h4" color="rgba(41, 45, 50, 0.44)">
+            <Typography variant="h7" color="rgba(41, 45, 50, 0.44)">
               Admin
             </Typography>
           </Box>
@@ -327,7 +327,7 @@ const Layout = (props) => {
                   sx={{ width: 40, height: 40 }}
                 />
                 <Box sx={{ marginLeft: "10px" }}>
-                  <Typography variant="h8" color={"#292D32"} display="block">
+                  <Typography variant="h6" color={"#292D32"} display="block">
                     Alex Meian
                   </Typography>
                   <Typography

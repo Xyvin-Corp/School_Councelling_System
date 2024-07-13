@@ -37,21 +37,21 @@ const UserCard = ({ user }) => {
               {user?.id}
             </Typography>
           ) : null}
-          <Typography variant="h5" fontWeight="600" color={"#4A4647"}>
+          <Typography variant="h5" color={"#4A4647"}>
             {user?.name}
           </Typography>
-          <Typography variant="h8" color={"#4A4647"}>
+          <Typography variant="h6" color={"#4A4647"}>
             {user?.title}
           </Typography>
           <Stack direction="row" alignItems="center" spacing={1}>
             <PhoneIcon />
-            <Typography variant="h8" color={"#2C2829"}>
+            <Typography variant="h6" color={"#2C2829"}>
               {user?.phone}
             </Typography>
           </Stack>
           <Stack direction="row" alignItems="center" spacing={1}>
             <EmailIcon />
-            <Typography variant="h8" color={"#2C2829"}>
+            <Typography variant="h6" color={"#2C2829"}>
               {user?.email}
             </Typography>
           </Stack>

@@ -27,14 +27,13 @@ const StyledTableCell = styled(TableCell)`
     color: rgba(0, 0, 0, 0.87);
     font-size: 14px;
     padding: 16px;
-    font-family: "Roboto", sans-serif;
+
     text-align: center;
     font-weight: 600;
   }
   &.${tableCellClasses.body} {
     font-size: 14px;
     background-color: #fff;
-    font-family: "Roboto", sans-serif;
     padding: 16px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.87);
@@ -167,7 +166,8 @@ const StyledTable = ({
                 {columns.map((column) => (
                   <StyledTableCell
                     key={column.field}
-                    padding={column.padding || "normal"}sx={{ cursor: "pointer" }}
+                    padding={column.padding || "normal"}
+                    sx={{ cursor: "pointer" }}
                     onClick={() => handleRowClick(row.id)}
                   >
                     {column.field === "status" ? (
