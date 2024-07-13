@@ -116,7 +116,7 @@ const StyledTable = ({
         return "#2E7D32";
       case "inactive":
         return "green";
-      case "in-progress":
+      case "send":
         return "blue";
       case "rejected":
         return "rejected";

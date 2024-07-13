@@ -1,12 +1,12 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { userColumns, userData } from "../assets/json/TableData";
+import { userColumns, userData } from "../../../../assets/json/TableData";
+import StyledTable from "../../../../ui/StyledTable";
 import { useNavigate } from "react-router-dom";
-import StyledTable from "../ui/StyledTable";
-import StyledSearchbar from "../ui/StyledSearchbar";
 
-import { ReactComponent as FilterIcon } from "../assets/icons/FilterIcon.svg";
-export default function CasesSection() {
+import { ReactComponent as FilterIcon } from "../../../../assets/icons/FilterIcon.svg";
+import StyledSearchbar from "../../../../ui/StyledSearchbar";
+const StudentPage = () => {
   const navigate = useNavigate();
   const [selectedRows, setSelectedRows] = useState([]);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -25,24 +25,21 @@ export default function CasesSection() {
 
   const handleView = (id) => {
     console.log("View item:", id);
-    navigate(`/cases/case/${id}`);
+    navigate(`/user/student/${id}`);
   };
   return (
     <>
-      {" "}
       <Box padding={"30px"} bgcolor={"#FFFFFF"}>
         <Typography variant="h4" color={"#4A4647"}>
-          Cases
+          Student list
         </Typography>
       </Box>
-
       <Stack
         direction={"row"}
         justifyContent={"end"}
         padding={3}
         alignItems={"center"}
       >
-       
         <Stack direction={"row"} spacing={2}>
           <StyledSearchbar />
           <Box
@@ -62,14 +59,15 @@ export default function CasesSection() {
         </Stack>
       </Stack>
       <Box padding="30px" marginBottom={4}>
-        {" "}
         <StyledTable
           columns={userColumns}
           data={userData}
           onSelectionChange={handleSelectionChange}
           onView={handleView}
-        />{" "}
+        />
       </Box>
     </>
   );
-}
+};
+
+export default StudentPage;

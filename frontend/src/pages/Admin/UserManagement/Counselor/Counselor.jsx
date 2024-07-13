@@ -1,12 +1,12 @@
-import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { userColumns, userData } from "../assets/json/TableData";
-import StyledTable from "../ui/StyledTable";
+import { Box, Typography, Tabs, Tab, Stack } from "@mui/material";
+import StyledTable from "../../../../ui/StyledTable";
+import { userColumns, userData } from "../../../../assets/json/TableData";
 import { useNavigate } from "react-router-dom";
-import AddEvent from "../components/AddEvent";
-import StyledSearchbar from "../ui/StyledSearchbar";
-import { ReactComponent as FilterIcon } from "../assets/icons/FilterIcon.svg";
-export default function Events() {
+import AddCounselor from "../../../../components/AddCounselor";
+import { ReactComponent as FilterIcon } from "../../../../assets/icons/FilterIcon.svg";
+import StyledSearchbar from "../../../../ui/StyledSearchbar";
+export const Counselor = () => {
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
@@ -26,7 +26,7 @@ export default function Events() {
 
   const handleView = (id) => {
     console.log("View item:", id);
-    navigate(`/events/${id}`);
+    navigate(`/user/counselor/${id}`);
   };
 
   const handleChange = (event, newValue) => {
@@ -47,6 +47,7 @@ export default function Events() {
           },
         }}
         sx={{
+
           bgcolor: "white",
           paddingTop: "20px",
           "& .MuiTabs-indicator": {
@@ -55,15 +56,18 @@ export default function Events() {
           "& .MuiTab-root": {
             textTransform: "none",
             fontWeight: 600,
+            fontSize:'16px'
           },
           "& .Mui-selected": {
             color: "#0072BC",
           },
         }}
       >
-        <Tab label="Events" />
-        <Tab label="Add Event" />
-      </Tabs>{" "}
+        <Tab label="Counselor" />
+        <Tab label="Add Counselor" />
+        <Tab label="Add Bulk" />
+      </Tabs>
+
       <Box padding="30px" marginBottom={4}>
         {selectedTab === 0 && (
           <>
@@ -99,15 +103,9 @@ export default function Events() {
             />{" "}
           </>
         )}
-        {selectedTab === 1 && (
-          <Grid container spacing={2}>
-            <Grid item xs={9}>
-              {" "}
-              <AddEvent />
-            </Grid>{" "}
-          </Grid>
-        )}
+        {selectedTab === 1 && <AddCounselor />}
+        {selectedTab === 2 && <Typography>Not Found</Typography>}
       </Box>
     </>
   );
-}
+};

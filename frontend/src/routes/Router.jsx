@@ -1,26 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../layout/Layout";
-import DashboardPage from "../pages/DashboardPage";
-import StudentPage from "../pages/StudentPage";
+import DashboardPage from "../pages/Admin/DashboardPage";
 import App from "../App";
-import { Counselor } from "../pages/Counselor";
-import CasesSection from "../pages/CasesSection";
-import Events from "../pages/Events";
-import Settings from "../pages/Settings";
-import Report from "../pages/Report";
-import Notification from "../pages/Notification";
-import CounselorSinglePage from "../pages/CounselorSinglePage";
-import StudentSinglePage from "../pages/StudentSinglePage";
-import SessionPage from "../pages/SessionPage";
-import SessionSinglePage from "../pages/SessionSinglePage";
-import EventsSinglepage from "../pages/EventsSinglepage";
+import SessionSinglePage from "../pages/Admin/CasesAndSession/SessionSinglePage";
+import AdminLayout from "../layout/AdminLayout";
+import CasesSection from "../pages/Admin/CasesAndSession/CasesSection";
+import { Counselor } from "../pages/Admin/UserManagement/Counselor/Counselor";
+import CounselorSinglePage from "../pages/Admin/UserManagement/Counselor/CounselorSinglePage";
+import StudentPage from "../pages/Admin/UserManagement/Student/StudentPage";
+import StudentSinglePage from "../pages/Admin/UserManagement/Student/StudentSinglePage";
+import SessionPage from "../pages/Admin/CasesAndSession/SessionPage";
+import Notification from "../pages/Admin/Notification";
+import Report from "../pages/Admin/Report";
+import Settings from "../pages/Admin/Settings";
+import Events from "../pages/Admin/Events/Events";
+import EventsSinglepage from "../pages/Admin/Events/EventsSinglepage";
+import StudentLayout from "../layout/StudentLayout";
+import BookAppointment from "../pages/Student/BookAppointment";
+import StudentSession from "../pages/Student/Session/StudentSession";
+import StudentReport from "../pages/Student/Reports/StudentReport";
+import StudentEvents from "../pages/Student/Events/StudentEvents";
+import StudentSettings from "../pages/Student/StudentSettings";
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Layout>
+      <AdminLayout>
         <DashboardPage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
@@ -30,97 +36,140 @@ const router = createBrowserRouter([
   {
     path: "/user/student",
     element: (
-      <Layout>
+      <AdminLayout>
         <StudentPage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/user/student/:id",
     element: (
-      <Layout>
+      <AdminLayout>
         <StudentSinglePage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/user/counselor",
     element: (
-      <Layout>
+      <AdminLayout>
         <Counselor />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/user/counselor/:id",
     element: (
-      <Layout>
+      <AdminLayout>
         <CounselorSinglePage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/casesstudies",
     element: (
-      <Layout>
+      <AdminLayout>
         <CasesSection />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/cases/case/:id",
     element: (
-      <Layout>
+      <AdminLayout>
         <SessionPage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/cases/session/:id",
     element: (
-      <Layout>
+      <AdminLayout>
         <SessionSinglePage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/events",
     element: (
-      <Layout>
+      <AdminLayout>
         <Events />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/events/:id",
     element: (
-      <Layout>
+      <AdminLayout>
         <EventsSinglepage />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/report",
     element: (
-      <Layout>
+      <AdminLayout>
         <Report />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/notification",
     element: (
-      <Layout>
+      <AdminLayout>
         <Notification />
-      </Layout>
+      </AdminLayout>
     ),
   },
   {
     path: "/settings",
     element: (
-      <Layout>
+      <AdminLayout>
         <Settings />
-      </Layout>
+      </AdminLayout>
+    ),
+  },
+
+  // Student Module Routing
+
+  {
+    path: "/student/bookappoinment",
+    element: (
+      <StudentLayout>
+        <BookAppointment />
+      </StudentLayout>
+    ),
+  },
+  {
+    path: "/student/session",
+    element: (
+      <StudentLayout>
+        <StudentSession />
+      </StudentLayout>
+    ),
+  },
+  {
+    path: "/student/reports",
+    element: (
+      <StudentLayout>
+        <StudentReport />
+      </StudentLayout>
+    ),
+  },
+  {
+    path: "/student/events",
+    element: (
+      <StudentLayout>
+        <StudentEvents />
+      </StudentLayout>
+    ),
+  },
+  {
+    path: "/student/settings",
+    element: (
+      <StudentLayout>
+        <StudentSettings />
+      </StudentLayout>
     ),
   },
 ]);

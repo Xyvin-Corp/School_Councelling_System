@@ -1,8 +1,8 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-import UserCard from "../ui/UserCard";
-import CaseCard from "../ui/CaseCard";
-import imag from "../assets/images/staff.png";
+import UserCard from "../../../ui/UserCard";
+import imag from "../../../assets/images/staff.png";
+import CaseCard from "../../../ui/CaseCard";
 const SessionSinglePage = () => {
   const data = {
     id: 'STD920282',

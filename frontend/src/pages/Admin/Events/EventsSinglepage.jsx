@@ -1,11 +1,11 @@
 
 import { Box, Grid, Tab, Tabs, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import UserCard from '../ui/UserCard'
-import DescriptionCard from '../ui/DescriptionCard'
-import imag from "../assets/images/staff.png";
-import StyledTable from '../ui/StyledTable';
-import { userColumns, userData } from '../assets/json/TableData';
+import UserCard from '../../../ui/UserCard'
+import DescriptionCard from '../../../ui/DescriptionCard'
+import imag from "../../../assets/images/staff.png";
+import { userColumns, userData } from '../../../assets/json/TableData';
+import StyledTable from '../../../ui/StyledTable';
 
 const data = {
     name: "Event name",

@@ -16,7 +16,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Avatar,
   Badge,
@@ -28,33 +28,26 @@ import {
 } from "@mui/material";
 import profile from "../assets/images/profile.png";
 import { ReactComponent as ExpandMoreIcon } from "../assets/icons/ExpandMoreIcon.svg";
-import { ReactComponent as DashboardIcon } from "../assets/icons/DashboardIcon.svg";
+import { ReactComponent as BookingIcon } from "../assets/icons/BookingIcon.svg";
 import { ReactComponent as EventIcon } from "../assets/icons/EventIcon.svg";
 import { ReactComponent as ReportIcon } from "../assets/icons/ReportIcon.svg";
 import { ReactComponent as NotificationIcon } from "../assets/icons/NotificationIcon.svg";
 import { ReactComponent as SettingsIcon } from "../assets/icons/SettingsIcon.svg";
-import { ReactComponent as UserIcon } from "../assets/icons/UserIcon.svg";
-import { ReactComponent as StudentIcon } from "../assets/icons/StudentIcon.svg";
 import { ReactComponent as TeacherIcon } from "../assets/icons/TeacherIcon.svg";
 import { ReactComponent as LogoutIcon } from "../assets/icons/LogoutIcon.svg";
 const drawerWidth = 300;
 const subNavigation = [
-    { name: "Dashboard", to: "/", icon: <DashboardIcon /> },
-     {
-        name: "User Management",
-        icon: <UserIcon />,
-        subItems: [
-          { name: "Student", to: "/user/student", icon: <StudentIcon />  },
-          { name: "Counselor", to: "/user/counselor",icon: <TeacherIcon />  },
-        ],
-      },
-    { name: "Cases & Sessions", to: "/casesstudies", icon:<TeacherIcon />  },
-    { name: "Events", to: "/events", icon: <EventIcon /> },
-  
-    { name: "Report", to: "/report", icon: <ReportIcon /> },
-    { name: "Notification", to: "/notification", icon: <NotificationIcon /> },
-    { name: "Settings", to: "/settings", icon: <SettingsIcon /> },
-  ];
+  {
+    name: "Book Apponment",
+    to: "/student/bookappoinment",
+    icon: <BookingIcon />,
+  },
+
+  { name: "Session", to: "/student/session", icon: <EventIcon /> },
+  { name: "Reports", to: "/student/reports", icon: <ReportIcon /> },
+  { name: "Events", to: "/student/events", icon: <TeacherIcon /> },
+  { name: "Settings", to: "/student/settings", icon: <SettingsIcon /> },
+];
 const SimpleDialog = ({ open, onClose }) => {
   const navigate = useNavigate();
   return (
@@ -94,12 +87,13 @@ const SimpleDialog = ({ open, onClose }) => {
   );
 };
 
-const Layout = (props) => {
+const StudentLayout = (props) => {
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const location = useLocation();
   const handleDrawerClose = () => {
     setIsClosing(true);
     setMobileOpen(false);
@@ -148,6 +142,10 @@ const Layout = (props) => {
                     marginLeft: "20px",
                     marginRight: "10px",
                     color: "#5F6368",
+                    backgroundColor:
+                      open && location.pathname.startsWith("/user")
+                        ? "#F2F2F2"
+                        : "transparent",
                     "&:hover": { color: "#0072BC", backgroundColor: "#ECF6FC" },
                   }}
                 >
@@ -177,7 +175,14 @@ const Layout = (props) => {
                         sx={{
                           marginLeft: "40px",
                           marginRight: "40px",
-                          color: "#5F6368",
+                          color:
+                            location.pathname === subItem.to
+                              ? "#0072BC"
+                              : "#5F6368",
+                          backgroundColor:
+                            location.pathname === subItem.to
+                              ? "#ECF6FC"
+                              : "transparent",
                           "&:hover": {
                             color: "#0072BC",
                             backgroundColor: "#ECF6FC",
@@ -211,7 +216,9 @@ const Layout = (props) => {
                 sx={{
                   marginLeft: "20px",
                   marginRight: "10px",
-                  color: "#5F6368",
+                  color: location.pathname === item.to ? "#0072BC" : "#5F6368",
+                  backgroundColor:
+                    location.pathname === item.to ? "#ECF6FC" : "transparent",
                   "&:hover": { color: "#0072BC", backgroundColor: "#ECF6FC" },
                 }}
               >
@@ -389,7 +396,7 @@ const Layout = (props) => {
         component="main"
         sx={{
           flexGrow: 1,
-         
+
           backgroundColor: "#F3F3F3",
           paddingTop: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -403,8 +410,8 @@ const Layout = (props) => {
   );
 };
 
-Layout.propTypes = {
+StudentLayout.propTypes = {
   window: PropTypes.func,
 };
 
-export default Layout;
+export default StudentLayout;

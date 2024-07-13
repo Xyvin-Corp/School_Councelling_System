@@ -1,7 +1,16 @@
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 
-export default function BookAppointment() {
+const BookAppointment = () => {
   return (
-    <div>BookAppointment</div>
+    <>
+      <Box padding={"30px"} bgcolor={"#FFFFFF"}>
+        <Typography variant="h4" color={"#4A4647"}>
+        Book Appointment/ New Appointment
+        </Typography>
+      </Box>
+    </>
   )
 }
+
+export default BookAppointment

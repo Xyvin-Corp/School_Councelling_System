@@ -1,13 +1,9 @@
+import { Box, Stack, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
-import { Box, Typography, Tabs, Tab, Stack } from "@mui/material";
-import StyledTable from "../ui/StyledTable";
-import { userColumns, userData } from "../assets/json/TableData";
-import { useNavigate } from "react-router-dom";
-import AddCounselor from "../components/AddCounselor";
-import { ReactComponent as FilterIcon } from "../assets/icons/FilterIcon.svg";
-import StyledSearchbar from "../ui/StyledSearchbar";
-export const Counselor = () => {
-  const navigate = useNavigate();
+import StyledSearchbar from "../../../ui/StyledSearchbar";
+
+import { ReactComponent as FilterIcon } from "../../../assets/icons/FilterIcon.svg";
+const StudentSession = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -19,20 +15,10 @@ export const Counselor = () => {
   const handleCloseFilter = () => {
     setFilterOpen(false);
   };
-  const handleSelectionChange = (newSelectedIds) => {
-    setSelectedRows(newSelectedIds);
-    console.log("Selected items:", newSelectedIds);
-  };
-
-  const handleView = (id) => {
-    console.log("View item:", id);
-    navigate(`/user/counselor/${id}`);
-  };
 
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
-
   return (
     <>
       <Tabs
@@ -47,7 +33,6 @@ export const Counselor = () => {
           },
         }}
         sx={{
-
           bgcolor: "white",
           paddingTop: "20px",
           "& .MuiTabs-indicator": {
@@ -56,18 +41,15 @@ export const Counselor = () => {
           "& .MuiTab-root": {
             textTransform: "none",
             fontWeight: 600,
-            fontSize:'16px'
           },
           "& .Mui-selected": {
             color: "#0072BC",
           },
         }}
       >
-        <Tab label="Counselor" />
-        <Tab label="Add Counselor" />
-        <Tab label="Add Bulk" />
-      </Tabs>
-
+        <Tab label="Upcoming Sessions" />
+        <Tab label="Session History" />
+      </Tabs>{" "}
       <Box padding="30px" marginBottom={4}>
         {selectedTab === 0 && (
           <>
@@ -95,17 +77,13 @@ export const Counselor = () => {
                 </Box>
               </Stack>
             </Stack>
-            <StyledTable
-              columns={userColumns}
-              data={userData}
-              onSelectionChange={handleSelectionChange}
-              onView={handleView}
-            />{" "}
+            <Typography>Not Found</Typography>
           </>
         )}
-        {selectedTab === 1 && <AddCounselor />}
-        {selectedTab === 2 && <Typography>Not Found</Typography>}
+        {selectedTab === 1 && <Typography>Not Found</Typography>}
       </Box>
     </>
   );
 };
+
+export default StudentSession;
