@@ -3,7 +3,7 @@ export const userColumns = [
   
     { title: "Event Name", field: "EventName" },
     { title: "Notification Name", field: "NotificationName" },
-    { title: "Status", field: "Status" },
+    { title: "Status", field: "status" },
     { title: "Receiver", field: "Receiver" },
     
     
@@ -15,7 +15,7 @@ export const userColumns = [
       SendDateTime: "June 12,2024 07:10:36 AM",
       EventName: "EV21F2024",
       NotificationName: 'Global Warming-N1',
-      Status: "send",
+      status: "send",
       Receiver: "Fasna Yahiya",
       
     },
@@ -24,7 +24,7 @@ export const userColumns = [
       SendDateTime: "June 12,2024 07:10:36 AM",
       EventName: "EV21F2024",
       NotificationName: 'Global Warming-N1',
-      Status: "send",
+      status: "pending",
       Receiver: "Fasna Yahiya",
     },
     {
@@ -32,7 +32,7 @@ export const userColumns = [
         SendDateTime: "June 12,2024 07:10:36 AM",
         EventName: "EV21F2024",
         NotificationName: 'Global Warming-N1',
-        Status: "send",
+        status: "send",
         Receiver: "Fasna Yahiya",
         
       },
@@ -41,7 +41,7 @@ export const userColumns = [
        SendDateTime: "June 12,2024 07:10:36 AM",
        EventName: "EV21F2024",
       NotificationName: 'Global Warming-N1',
-      Status: "send",
+      status: "pending",
       Receiver: "Fasna Yahiya",
         
       },

@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import StyledTable from "../ui/StyledTable";
 import { useNavigate } from "react-router-dom";
-import { userColumns, userData } from "../assets/json/TableData";
+import { userColumns, userData } from "../assets/json/CaseSectionSessionlistData";
 import StyledSearchbar from "../ui/StyledSearchbar";
 import { ReactComponent as FilterIcon } from "../assets/icons/FilterIcon.svg";
 const SessionPage = () => {
