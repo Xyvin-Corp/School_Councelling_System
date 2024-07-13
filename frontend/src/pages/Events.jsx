@@ -64,38 +64,40 @@ export default function Events() {
         <Tab label="Events" />
         <Tab label="Add Event" />
       </Tabs>{" "}
-      <Stack
-        direction={"row"}
-        justifyContent={"end"}
-        padding={3}
-        alignItems={"center"}
-      >
-        <Stack direction={"row"} spacing={2}>
-          <StyledSearchbar />
-          <Box
-            bgcolor={"#FFFFFF"}
-            borderRadius={"50%"}
-            width={"48px"}
-            height={"48px"}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="1px solid rgba(0, 0, 0, 0.12)"
-            onClick={handleOpenFilter}
-            style={{ cursor: "pointer" }}
-          >
-            <FilterIcon />
-          </Box>
-        </Stack>
-      </Stack>
       <Box padding="30px" marginBottom={4}>
         {selectedTab === 0 && (
-          <StyledTable
-            columns={userColumns}
-            data={userData}
-            onSelectionChange={handleSelectionChange}
-            onView={handleView}
-          />
+          <>
+            <Stack
+              direction={"row"}
+              justifyContent={"end"}
+              padding={3}
+              alignItems={"center"}
+            >
+              <Stack direction={"row"} spacing={2}>
+                <StyledSearchbar />
+                <Box
+                  bgcolor={"#FFFFFF"}
+                  borderRadius={"50%"}
+                  width={"48px"}
+                  height={"48px"}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border="1px solid rgba(0, 0, 0, 0.12)"
+                  onClick={handleOpenFilter}
+                  style={{ cursor: "pointer" }}
+                >
+                  <FilterIcon />
+                </Box>
+              </Stack>
+            </Stack>
+            <StyledTable
+              columns={userColumns}
+              data={userData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />{" "}
+          </>
         )}
         {selectedTab === 1 && (
           <Grid container spacing={2}>
