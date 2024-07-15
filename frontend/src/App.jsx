@@ -18,6 +18,8 @@ import DescriptionCard from './ui/DescriptionCard';
 import AddEvent from "./components/AddEvent";
 import Review from "./components/Review";
 import BookAppointment from "./components/BookAppointmentForm";
+import DropZone from "./ui/DropZone";
+
 
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);
@@ -77,6 +79,7 @@ function App() {
       <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
       <CaseCard />
       <BookAppointment></BookAppointment>
+      <DropZone/>
     </>
   );
 }
