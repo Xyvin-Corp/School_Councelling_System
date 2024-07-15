@@ -128,6 +128,10 @@ const StyledTable = ({
         return "#938F8F";
       case "completed": 
         return "#BFBABA";
+      case "live":        
+        return "red";
+      case "Recording Available": 
+        return "green";
       default:
         return "default";
     }
