@@ -17,6 +17,7 @@ import CouncellingCard from './ui/CouncellingCard';
 import DescriptionCard from './ui/DescriptionCard';
 import AddEvent from "./components/AddEvent";
 import Review from "./components/Review";
+import BookAppointment from "./components/BookAppointmentForm";
 
 function App() {
   const [selectedRows, setSelectedRows] = useState([]);
@@ -75,6 +76,7 @@ function App() {
       <AddEvent />
       <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
       <CaseCard />
+      <BookAppointment></BookAppointment>
     </>
   );
 }
