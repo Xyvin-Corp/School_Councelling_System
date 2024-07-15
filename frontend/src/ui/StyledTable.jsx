@@ -193,7 +193,7 @@ const StyledTable = ({
                             backgroundColor: getStatusVariant(
                               row[column.field]
                             ),
-                            padding: "0px 8px",
+                            padding: "3px 8px",
                             borderRadius: "100px",
                             color: "#fff",
                           }}

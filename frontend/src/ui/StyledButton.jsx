@@ -6,8 +6,8 @@ const buttonVariants = css`
     props.variant === "primary" &&
     css`
       border: none;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 400;
       color: #ffffff;
       line-height: 18px;
       background-color: #0072BC;
@@ -17,8 +17,8 @@ const buttonVariants = css`
     props.variant === "secondary" &&
     css`
       border: 1px solid #a8a8a8;
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 400;
       color: #0072BC;
       line-height: 18px;
       background-color: #ffffff;
@@ -35,11 +35,12 @@ const disabledStyles = css`
 `;
 
 const ButtonContainer = styled.button`
-  padding: 15px 20px;
+  padding: 16px 20px;
   text-align: center;
   width: 100%;
   font-family: "Inter", "sans-serif";
   display: flex;
+  
   justify-content: center;
   align-items: center;
   border-radius: 50px;

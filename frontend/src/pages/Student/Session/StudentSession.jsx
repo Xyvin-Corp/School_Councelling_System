@@ -1,19 +1,37 @@
-import { Box, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 import StyledSearchbar from "../../../ui/StyledSearchbar";
-
+import {
+  upcomingColumns,
+  upcomingData,
+} from "../../../assets/json/UpcomingSessionData";
 import { ReactComponent as FilterIcon } from "../../../assets/icons/FilterIcon.svg";
+import StyledTable from "../../../ui/StyledTable";
+import { useNavigate } from "react-router-dom";
+import SessionHistory from "./SessionHistory";
+import RescheduleSession from "./RescheduleSession";
 const StudentSession = () => {
+  const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
   const [filterOpen, setFilterOpen] = useState(false);
-
+  const [viewingId, setViewingId] = useState(null);
   const handleOpenFilter = () => {
     setFilterOpen(true);
   };
 
   const handleCloseFilter = () => {
     setFilterOpen(false);
+  };
+
+  const handleSelectionChange = (newSelectedIds) => {
+    setSelectedRows(newSelectedIds);
+    console.log("Selected items:", newSelectedIds);
+  };
+
+  const handleView = (id) => {
+    console.log("View item:", id);
+    setViewingId(id);
   };
 
   const handleChange = (event, newValue) => {
@@ -51,14 +69,18 @@ const StudentSession = () => {
         <Tab label="Session History" />
       </Tabs>{" "}
       <Box padding="30px" marginBottom={4}>
-        {selectedTab === 0 && (
+        {selectedTab === 0 && !viewingId && (
           <>
             <Stack
               direction={"row"}
-              justifyContent={"end"}
+              justifyContent={"space-between"}
               padding={3}
               alignItems={"center"}
             >
+              {" "}
+              <Typography variant="h4" color={"#4A4647"}>
+                Upcoming Sessions
+              </Typography>
               <Stack direction={"row"} spacing={2}>
                 <StyledSearchbar />
                 <Box
@@ -77,10 +99,27 @@ const StudentSession = () => {
                 </Box>
               </Stack>
             </Stack>
-            <Typography>Not Found</Typography>
+            <StyledTable
+              columns={upcomingColumns}
+              data={upcomingData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />
+          </>
+        )}{" "}
+        {selectedTab === 0 && viewingId && (
+          <>
+            <Typography variant="h4" color={"#4A4647"} sx={{ marginBottom: 4 }}>
+              Upcoming Sessions / Reschedule ‘Personal Story’
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <RescheduleSession />{" "}
+              </Grid>{" "}
+            </Grid>
           </>
         )}
-        {selectedTab === 1 && <Typography>Not Found</Typography>}
+        {selectedTab === 1 && <SessionHistory />}
       </Box>
     </>
   );
