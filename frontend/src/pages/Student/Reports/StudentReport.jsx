@@ -1,16 +1,67 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
+import StyledSearchbar from "../../../ui/StyledSearchbar";
+import { ReactComponent as FilterIcon } from "../../../assets/icons/FilterIcon.svg";
+import StyledTable from "../../../ui/StyledTable";
+import { userColumns, userData } from "../../../assets/json/StudentReportData";
 
-const StudentReport = () => {
+const handleOpenFilter = () => {
+  setFilterOpen(true);
+};
+const handleSelectionChange = (newSelectedIds) => {
+  setSelectedRows(newSelectedIds);
+  console.log("Selected items:", newSelectedIds);
+};
+const handleView = (id) => {
+  console.log("View item:", id);
+  navigate(`/cases/session/${id}`);
+};
+const StudentEvents = () => {
   return (
     <>
-      <Box padding={"30px"} bgcolor={"#FFFFFF"}>
+      <Box padding={"30px"} bgcolor={"#FFFFFF"} >
         <Typography variant="h4" color={"#4A4647"}>
-          Reports / Reports List
+          Events / Events list
         </Typography>
       </Box>
+      <Grid sx={{marginRight:25}}>
+      <Stack
+        direction={"row"}
+        justifyContent={"end"}
+        padding={3}
+        alignItems={"center"}
+      >
+       
+        <Stack direction={"row"} spacing={2}>
+          <StyledSearchbar />
+          <Box
+            bgcolor={"#FFFFFF"}
+            borderRadius={"50%"}
+            width={"48px"}
+            height={"48px"}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="1px solid rgba(0, 0, 0, 0.12)"
+            onClick={handleOpenFilter}
+            style={{ cursor: "pointer" }}
+          >
+            <FilterIcon />
+          </Box>
+        </Stack>
+      </Stack>
+      <Box padding="30px" marginBottom={4}>
+        {" "}
+        <StyledTable
+          columns={userColumns}
+          data={userData}
+          onSelectionChange={handleSelectionChange}
+          onView={handleView}
+        />{" "}
+      </Box>
+      </Grid>
     </>
   );
 };
 
-export default StudentReport;
+export default StudentEvents;

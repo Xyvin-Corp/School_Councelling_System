@@ -91,3 +91,5 @@ export const StyledEventUpload = ({ label, placeholder }) => {
     </>
   );
 };
+
+
