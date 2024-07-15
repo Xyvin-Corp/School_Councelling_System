@@ -21,7 +21,7 @@ const StudentEvents = () => {
     <>
       <Box padding={"30px"} bgcolor={"#FFFFFF"} >
         <Typography variant="h4" color={"#4A4647"}>
-        Reports / Reports Lis
+        Reports / Reports List
         </Typography>
       </Box>
       <Grid sx={{marginRight:25}}>

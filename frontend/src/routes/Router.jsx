@@ -20,6 +20,12 @@ import StudentSession from "../pages/Student/Session/StudentSession";
 import StudentReport from "../pages/Student/Reports/StudentReport";
 import StudentEvents from "../pages/Student/Events/StudentEvents";
 import StudentSettings from "../pages/Student/StudentSettings";
+import CounselorLayout from "../layout/CounselorLayout";
+import UpcomingSession from "../pages/Counselor/UpcomingSession/UpcomingSession";
+import CounselorSession from "../pages/Counselor/Session/CounselorSession";
+import CounselorReport from "../pages/Counselor/Report/CounselorReport";
+import CounselorEvent from "../pages/Counselor/Event/CounselorEvent";
+import CounselorSettings from "../pages/Counselor/CounselorSettings";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -170,6 +176,47 @@ const router = createBrowserRouter([
       <StudentLayout>
         <StudentSettings />
       </StudentLayout>
+    ),
+  },
+  // counselor Module Routing
+  {
+    path: "/counselor/upcomminSession",
+    element: (
+      <CounselorLayout>
+        <UpcomingSession />
+      </CounselorLayout>
+    ),
+  },
+  {
+    path: "/counselor/session",
+    element: (
+      <CounselorLayout>
+        <CounselorSession />
+      </CounselorLayout>
+    ),
+  },
+  {
+    path: "/counselor/report",
+    element: (
+      <CounselorLayout>
+        <CounselorReport />
+      </CounselorLayout>
+    ),
+  },
+  {
+    path: "/counselor/event",
+    element: (
+      <CounselorLayout>
+        <CounselorEvent />
+      </CounselorLayout>
+    ),
+  },
+  {
+    path: "/counselor/setting",
+    element: (
+      <CounselorLayout>
+        <CounselorSettings />
+      </CounselorLayout>
     ),
   },
 ]);
