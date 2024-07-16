@@ -41,7 +41,7 @@ const ImagePreview = styled(Box)({
   borderRadius: '4px',
 });
 
-export const StyledEventUpload = ({ label, placeholder }) => {
+export const StyledEventUpload = ({ label, placeholder, onChange }) => {
   const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -55,6 +55,7 @@ export const StyledEventUpload = ({ label, placeholder }) => {
       const reader = new FileReader();
       reader.onload = (e) => {
         setSelectedImage(e.target.result);
+        onChange(e.target.result); // Update form state with image data
       };
       reader.readAsDataURL(file);
       console.log('Selected file:', file.name);
@@ -91,5 +92,3 @@ export const StyledEventUpload = ({ label, placeholder }) => {
     </>
   );
 };
-
-
