@@ -14,7 +14,7 @@ export const userColumns = [
       CreatedOn: "June 2, 2024",
       ToWhom: "Student",
       Sender: "Counsilor",
-      status: "active",
+      status: "published",
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ export const userColumns = [
         CreatedOn: "June 2, 2024",
         ToWhom: "John Doe",
         Sender: "Career Counselling",
-        status: "active",
+        status: "draft",
     },
   ];
   

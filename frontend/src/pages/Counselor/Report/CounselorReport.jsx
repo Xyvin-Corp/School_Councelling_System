@@ -1,5 +1,10 @@
 import { Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
+import { Box, Grid, Stack} from "@mui/material";
+import StyledTable from "../../../ui/StyledTable";
+import StyledSearchbar from "../../../ui/StyledSearchbar";
+import { userColumns, userData } from '../../../assets/json/CounselorReportTable';
+import { ReactComponent as FilterIcon } from "../../../assets/icons/FilterIcon.svg";
 
 const CounselorReport = () => {
     const [selectedTab, setSelectedTab] = useState(0);
@@ -57,6 +62,50 @@ const CounselorReport = () => {
         <Tab label="Reports" />
         <Tab label="Add Report" />
       </Tabs>
+      <Box padding="30px" marginBottom={4}>
+        {selectedTab === 0 && (
+          <>
+            <Stack
+              direction={"row"}
+              justifyContent={"end"}
+              padding={3}
+              alignItems={"center"}
+            >
+              <Stack direction={"row"} spacing={2}>
+                <StyledSearchbar />
+                <Box
+                  bgcolor={"#FFFFFF"}
+                  borderRadius={"50%"}
+                  width={"48px"}
+                  height={"48px"}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border="1px solid rgba(0, 0, 0, 0.12)"
+                  onClick={handleOpenFilter}
+                  style={{ cursor: "pointer" }}
+                >
+                <FilterIcon />
+                </Box>
+              </Stack>
+            </Stack>
+            <StyledTable
+              columns={userColumns}
+              data={userData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />{" "}
+          </>
+        )}
+        {selectedTab === 1 && (
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              {" "}
+             NOT FOUND
+            </Grid>{" "}
+          </Grid>
+        )}
+      </Box>
     </>
   );
 };

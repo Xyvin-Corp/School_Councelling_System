@@ -69,7 +69,7 @@ export default function AddEvent() {
             fontWeight={500}
             color={"#333333"}
           >
-            Event Image
+            Upload Event Image
           </Typography>
           <StyledEventUpload label="Upload your Image here" />
         </Grid>

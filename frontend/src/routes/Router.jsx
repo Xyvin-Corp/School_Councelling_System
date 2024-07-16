@@ -212,6 +212,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/counselor/event/:id",
+    element: (
+      <CounselorLayout>
+        <EventsSinglepage />
+      </CounselorLayout>
+    ),
+  },
+  {
     path: "/counselor/setting",
     element: (
       <CounselorLayout>
