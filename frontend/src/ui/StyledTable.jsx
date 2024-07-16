@@ -132,6 +132,10 @@ const StyledTable = ({
         return "red";
       case "Recording Available": 
         return "green";
+      case "published": 
+        return "green";
+      case "draft": 
+        return "#BFBABA";
       default:
         return "default";
     }
