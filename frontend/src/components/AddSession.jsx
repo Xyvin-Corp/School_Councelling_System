@@ -6,8 +6,9 @@ import { StyledMultilineTextField } from "../ui/StyledMultilineTextField ";
 import { StyledCalender } from "../ui/StyledCalender";
 import StyledSwitch from "/src/ui/StyledSwitch.jsx";
 import DropZone from "../ui/DropZone";
+import StyledInput from "../ui/StyledInput";
 
-export default function AddEntry() {
+export default function AddSession() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleSwitchChange = (e) => {
@@ -23,7 +24,18 @@ export default function AddEntry() {
             fontWeight={500}
             color={"#333333"}
           >
-            Date of Next appointment
+            Type of Counselling
+          </Typography>
+          <StyledSelectField label="Grade" />
+        </Grid>
+        <Grid item xs={6}>
+          <Typography
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
+          >
+            Select a Date & Time
           </Typography>
           <StyledCalender label="Select Date from Calender" />
         </Grid>
@@ -34,60 +46,48 @@ export default function AddEntry() {
             fontWeight={500}
             color={"#333333"}
           >
-            Grade
+            Select Location
           </Typography>
           <StyledSelectField label="Grade" />
-        </Grid>{" "}
-        <Grid item xs={12}>
+        </Grid>
+        <Grid item xs={6}>
           <Typography
             sx={{ marginBottom: 1 }}
             variant="h6"
             fontWeight={500}
             color={"#333333"}
           >
-            Referred to
+            Select Date and time
           </Typography>
-          <StyledSelectField label="Grade" />
+          <StyledSelectField />
         </Grid>{" "}
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <Typography
             sx={{ marginBottom: 1 }}
             variant="h6"
             fontWeight={500}
             color={"#333333"}
           >
-            Remarks
+            Add link
+          </Typography>
+          <StyledInput placeholder={"Add Link"} />
+        </Grid>{" "}
+        <Grid item xs={6}></Grid> <Grid item xs={6}></Grid>
+        <Grid item xs={6}>
+          <Typography
+            sx={{ marginBottom: 1 }}
+            variant="h6"
+            fontWeight={500}
+            color={"#333333"}
+          >
+            Reason for rescheduling
           </Typography>
           <StyledMultilineTextField
             label="Add Description in less than 500 words"
             rows={4}
           />
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            sx={{ marginBottom: 1 }}
-            variant="h6"
-            fontWeight={500}
-            color={"#333333"}
-          >
-            Case Details
-          </Typography>
-          <StyledMultilineTextField
-            label="Add Description in less than 500 words"
-            rows={4}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            sx={{ marginBottom: 1 }}
-            variant="h6"
-            fontWeight={500}
-            color={"#333333"}
-          >
-          Upload relevent Docs
-          </Typography>
-          <DropZone/>
-        </Grid>
+        </Grid>{" "}
+        <Grid item xs={6}></Grid>
         <Grid item xs={6}>
           <Stack direction={"row"} justifyContent={"space-between"}>
             <Typography
@@ -96,12 +96,12 @@ export default function AddEntry() {
               fontWeight={500}
               color={"#333333"}
             >
-              Close Case
+              Confirm Reschedule
             </Typography>
             <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />{" "}
           </Stack>
         </Grid>
-        <Grid item xs={6}></Grid> <Grid item xs={6}></Grid>
+        <Grid item xs={6}></Grid>
         <Grid item xs={6}>
           {" "}
           <Stack direction={"row"} spacing={2}>
