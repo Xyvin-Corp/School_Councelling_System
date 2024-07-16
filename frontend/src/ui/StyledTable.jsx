@@ -127,7 +127,7 @@ const StyledTable = ({
       case "closed": 
         return "#938F8F";
       case "completed": 
-        return "#BFBABA";
+        return "#2E7D32";
       case "live":        
         return "red";
       case "Recording Available": 

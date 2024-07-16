@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Box, Typography, Tabs, Tab, Stack } from "@mui/material";
+import { Box, Typography, Tabs, Tab, Stack, Grid } from "@mui/material";
 import StyledTable from "../../../../ui/StyledTable";
 import { userColumns, userData } from "../../../../assets/json/TableData";
 import { useNavigate } from "react-router-dom";
 import AddCounselor from "../../../../components/AddCounselor";
 import { ReactComponent as FilterIcon } from "../../../../assets/icons/FilterIcon.svg";
 import StyledSearchbar from "../../../../ui/StyledSearchbar";
+import AddBulk from "../../../../components/AddBulk";
 export const Counselor = () => {
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState(0);
@@ -47,7 +48,6 @@ export const Counselor = () => {
           },
         }}
         sx={{
-
           bgcolor: "white",
           paddingTop: "20px",
           "& .MuiTabs-indicator": {
@@ -56,7 +56,7 @@ export const Counselor = () => {
           "& .MuiTab-root": {
             textTransform: "none",
             fontWeight: 600,
-            fontSize:'16px'
+            fontSize: "16px",
           },
           "& .Mui-selected": {
             color: "#0072BC",
@@ -104,7 +104,13 @@ export const Counselor = () => {
           </>
         )}
         {selectedTab === 1 && <AddCounselor />}
-        {selectedTab === 2 && <Typography>Not Found</Typography>}
+        {selectedTab === 2 && (
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <AddBulk />{" "}
+            </Grid>{" "}
+          </Grid>
+        )}
       </Box>
     </>
   );
