@@ -20,6 +20,7 @@ import Review from "./components/Review";
 import BookAppointment from "./components/BookAppointmentForm";
 import DropZone from "./ui/DropZone";
 import AddEntry from "./components/AddEntry";
+import BigCalendar from "./ui/BigCalendar";
 
 
 function App() {
@@ -80,7 +81,7 @@ function App() {
       <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
       <CaseCard />
       <BookAppointment></BookAppointment>
-      <DropZone/>
+      <DropZone/>  <BigCalendar/>
     </>
   );
 }
