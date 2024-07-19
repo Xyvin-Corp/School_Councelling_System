@@ -19,6 +19,7 @@ import AddEvent from "./components/AddEvent";
 import Review from "./components/Review";
 import BookAppointment from "./components/BookAppointmentForm";
 import DropZone from "./ui/DropZone";
+import AddEntry from "./components/AddEntry";
 
 
 function App() {
@@ -75,7 +76,7 @@ function App() {
       <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />
       <CouncellingCard />
       <DescriptionCard />
-      <AddEvent />
+      <AddEntry />
       <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
       <CaseCard />
       <BookAppointment></BookAppointment>

@@ -26,6 +26,7 @@ import CounselorSession from "../pages/Counselor/Session/CounselorSession";
 import CounselorReport from "../pages/Counselor/Report/CounselorReport";
 import CounselorEvent from "../pages/Counselor/Event/CounselorEvent";
 import CounselorSettings from "../pages/Counselor/CounselorSettings";
+import UpcomingSessionSinglePge from "../pages/Counselor/UpcomingSession/UpcomingSessionSinglePge";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -184,6 +185,14 @@ const router = createBrowserRouter([
     element: (
       <CounselorLayout>
         <UpcomingSession />
+      </CounselorLayout>
+    ),
+  },
+  {
+    path: "/counselor/upcomminSession/:id",
+    element: (
+      <CounselorLayout>
+        <UpcomingSessionSinglePge />
       </CounselorLayout>
     ),
   },
