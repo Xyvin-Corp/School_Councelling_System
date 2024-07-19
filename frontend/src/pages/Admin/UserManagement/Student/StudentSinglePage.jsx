@@ -71,7 +71,7 @@ const StudentSinglePage = () => {
         }}
         sx={{
           bgcolor: "white",
-          paddingTop: "20px",
+          paddingTop: "34px",
           "& .MuiTabs-indicator": {
             backgroundColor: "#0072BC",
           },
@@ -87,41 +87,44 @@ const StudentSinglePage = () => {
         <Tab label="Counselling Sessions" />
         <Tab label="Reports" />
       </Tabs>
-      <Stack
-        direction={"row"}
-        justifyContent={"end"}
-        padding={3}
-        alignItems={"center"}
-      >
-        <Stack direction={"row"} spacing={2}>
-          <StyledSearchbar />
-          <Box
-            bgcolor={"#FFFFFF"}
-            borderRadius={"50%"}
-            width={"48px"}
-            height={"48px"}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="1px solid rgba(0, 0, 0, 0.12)"
-            onClick={handleOpenFilter}
-            style={{ cursor: "pointer" }}
-          >
-            <FilterIcon />
-          </Box>
-        </Stack>
-      </Stack>
       <Box padding="30px" marginBottom={4}>
-        {selectedTab === 0 && (
-          <StyledTable
-            columns={userColumns}
-            data={userData}
-            onSelectionChange={handleSelectionChange}
-            onView={handleView}
-          />
-        )}
-        {selectedTab === 1 && <Typography>Not Found</Typography>}
-        {selectedTab === 2 && <Typography>Not Found</Typography>}
+        <>
+          <Stack
+            direction={"row"}
+            justifyContent={"end"}
+            paddingBottom={3}
+            alignItems={"center"}
+          >
+            <Stack direction={"row"} spacing={2}>
+              <StyledSearchbar />
+              <Box
+                bgcolor={"#FFFFFF"}
+                borderRadius={"50%"}
+                width={"48px"}
+                height={"48px"}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                border="1px solid rgba(0, 0, 0, 0.12)"
+                onClick={handleOpenFilter}
+                style={{ cursor: "pointer" }}
+              >
+                <FilterIcon />
+              </Box>
+            </Stack>
+          </Stack>
+
+          {selectedTab === 0 && (
+            <StyledTable
+              columns={userColumns}
+              data={userData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />
+          )}
+          {selectedTab === 1 && <Typography>Not Found</Typography>}
+          {selectedTab === 2 && <Typography>Not Found</Typography>}
+        </>{" "}
       </Box>
     </>
   );

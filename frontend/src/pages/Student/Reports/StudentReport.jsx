@@ -19,47 +19,45 @@ const handleView = (id) => {
 const StudentEvents = () => {
   return (
     <>
-      <Box padding={"30px"} bgcolor={"#FFFFFF"} >
+      <Box padding={"30px"} bgcolor={"#FFFFFF"}>
         <Typography variant="h4" color={"#4A4647"}>
-        Reports / Reports List
+          Reports / Reports List
         </Typography>
       </Box>
-      <Grid sx={{marginRight:25}}>
-      <Stack
-        direction={"row"}
-        justifyContent={"end"}
-        padding={3}
-        alignItems={"center"}
-      >
-       
-        <Stack direction={"row"} spacing={2}>
-          <StyledSearchbar />
-          <Box
-            bgcolor={"#FFFFFF"}
-            borderRadius={"50%"}
-            width={"48px"}
-            height={"48px"}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="1px solid rgba(0, 0, 0, 0.12)"
-            onClick={handleOpenFilter}
-            style={{ cursor: "pointer" }}
-          >
-            <FilterIcon />
-          </Box>
-        </Stack>
-      </Stack>
       <Box padding="30px" marginBottom={4}>
-        {" "}
-        <StyledTable
-          columns={userColumns}
-          data={userData}
-          onSelectionChange={handleSelectionChange}
-          onView={handleView}
-        />{" "}
+        <>
+          <Stack
+            direction={"row"}
+            justifyContent={"end"}
+            paddingBottom={3}
+            alignItems={"center"}
+          >
+            <Stack direction={"row"} spacing={2}>
+              <StyledSearchbar />
+              <Box
+                bgcolor={"#FFFFFF"}
+                borderRadius={"50%"}
+                width={"48px"}
+                height={"48px"}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                border="1px solid rgba(0, 0, 0, 0.12)"
+                onClick={handleOpenFilter}
+                style={{ cursor: "pointer" }}
+              >
+                <FilterIcon />
+              </Box>
+            </Stack>
+          </Stack>{" "}
+          <StyledTable
+            columns={userColumns}
+            data={userData}
+            onSelectionChange={handleSelectionChange}
+            onView={handleView}
+          />{" "}
+        </>
       </Box>
-      </Grid>
     </>
   );
 };

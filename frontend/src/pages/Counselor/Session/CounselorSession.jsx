@@ -49,7 +49,7 @@ const CounselorSession = () => {
         }}
         sx={{
           bgcolor: "white",
-          paddingTop: "20px",
+          paddingTop: "34px",
           "& .MuiTabs-indicator": {
             backgroundColor: "#0072BC",
           },
@@ -73,7 +73,7 @@ const CounselorSession = () => {
             <Stack
               direction={"row"}
               justifyContent={"end"}
-              padding={3}
+              paddingBottom={3}
               alignItems={"center"}
             >
               {" "}

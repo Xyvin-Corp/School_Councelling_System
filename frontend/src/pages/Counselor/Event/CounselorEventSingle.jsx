@@ -63,7 +63,7 @@ export default function
         }}
         sx={{
           bgcolor: "white",
-          paddingTop: "20px",
+          paddingTop: "34px",
           "& .MuiTabs-indicator": {
             backgroundColor: "#0072BC",
           },

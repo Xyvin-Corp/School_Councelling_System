@@ -13,7 +13,6 @@ import StyledTable from "../../../ui/StyledTable";
 import BigCalendar from "../../../ui/BigCalendar";
 const UpcomingSession = () => {
   const navigate = useNavigate();
-  const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
   const [filterOpen, setFilterOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
@@ -49,8 +48,8 @@ const UpcomingSession = () => {
         <>
           <Stack
             direction={"row"}
-            justifyContent={"space-between"}
-            padding={3}
+            justifyContent={"space-between"}paddingBottom={3}
+            
             alignItems={"center"}
           >
             {" "}

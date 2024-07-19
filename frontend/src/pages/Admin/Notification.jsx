@@ -45,59 +45,63 @@ export default function Notification() {
           Notification Log
         </Typography>
       </Box>
-      <Stack
-        direction={"row"}
-        justifyContent={"space-between"}
-        padding={2}
-        alignItems={"center"}
-      >
-        <Box display="flex" gap={2} padding={2}>
-          <StyledButton
-            name="Events"
-            variant={selectedTab === "events" ? "primary" : "secondary"}
-            onClick={() => handleTabChange("events")}
-          />
-          <StyledButton
-            name="Counselling"
-            variant={selectedTab === "counselling" ? "primary" : "secondary"}
-            onClick={() => handleTabChange("counselling")}
-          />
-        </Box>{" "}
-        <Stack direction={"row"} spacing={2}>
-          <StyledSearchbar />
-          <Box
-            bgcolor={"#FFFFFF"}
-            borderRadius={"50%"}
-            width={"48px"}
-            height={"48px"}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="1px solid rgba(0, 0, 0, 0.12)"
-            onClick={handleOpenFilter}
-            style={{ cursor: "pointer" }}
-          >
-            <FilterIcon />
-          </Box>
-        </Stack>
-      </Stack>
-
       <Box padding="30px" marginBottom={4}>
-        {selectedTab === "events" ? (
-          <StyledTable
-            columns={eventColumns}
-            data={eventData}
-            onSelectionChange={handleSelectionChange}
-            onView={handleView}
-          />
-        ) : (
-          <StyledTable
-            columns={counsellingColumns}
-            data={counsellingData}
-            onSelectionChange={handleSelectionChange}
-            onView={handleView}
-          />
-        )}
+        <>
+          <Stack
+            direction={"row"}
+            justifyContent={"space-between"}
+            paddingBottom={3}
+            alignItems={"center"}
+          >
+            <Stack direction={"row"} spacing={2}>
+              <StyledButton
+                name="Events"
+                variant={selectedTab === "events" ? "primary" : "secondary"}
+                onClick={() => handleTabChange("events")}
+              />
+              <StyledButton
+                name="Counselling"
+                variant={
+                  selectedTab === "counselling" ? "primary" : "secondary"
+                }
+                onClick={() => handleTabChange("counselling")}
+              />
+            </Stack>
+
+            <Stack direction={"row"} spacing={2}>
+              <StyledSearchbar />
+              <Box
+                bgcolor={"#FFFFFF"}
+                borderRadius={"50%"}
+                width={"48px"}
+                height={"48px"}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                border="1px solid rgba(0, 0, 0, 0.12)"
+                onClick={handleOpenFilter}
+                style={{ cursor: "pointer" }}
+              >
+                <FilterIcon />
+              </Box>
+            </Stack>
+          </Stack>
+          {selectedTab === "events" ? (
+            <StyledTable
+              columns={eventColumns}
+              data={eventData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />
+          ) : (
+            <StyledTable
+              columns={counsellingColumns}
+              data={counsellingData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />
+          )}{" "}
+        </>
       </Box>
     </>
   );

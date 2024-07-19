@@ -49,7 +49,7 @@ export const Counselor = () => {
         }}
         sx={{
           bgcolor: "white",
-          paddingTop: "20px",
+          paddingTop: "34px",
           "& .MuiTabs-indicator": {
             backgroundColor: "#0072BC",
           },
@@ -74,7 +74,7 @@ export const Counselor = () => {
             <Stack
               direction={"row"}
               justifyContent={"end"}
-              padding={3}
+              paddingBottom={3}
               alignItems={"center"}
             >
               <Stack direction={"row"} spacing={2}>

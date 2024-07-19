@@ -41,6 +41,7 @@ const StudentSession = () => {
     <>
       <Tabs
         value={selectedTab}
+        
         onChange={handleChange}
         aria-label="tabs"
         TabIndicatorProps={{
@@ -52,7 +53,7 @@ const StudentSession = () => {
         }}
         sx={{
           bgcolor: "white",
-          paddingTop: "20px",
+          paddingTop: "34px",
           "& .MuiTabs-indicator": {
             backgroundColor: "#0072BC",
           },
@@ -74,7 +75,7 @@ const StudentSession = () => {
             <Stack
               direction={"row"}
               justifyContent={"space-between"}
-              padding={3}
+              paddingBottom={3}
               alignItems={"center"}
             >
               {" "}

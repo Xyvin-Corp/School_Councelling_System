@@ -61,7 +61,11 @@ const SessionHistory = () => {
   const { columns, data } = getTableData();
   return (
     <>
-      <Stack direction={"row"} justifyContent={"space-between"} padding={2}>
+      <Stack
+        direction={"row"}
+        justifyContent={"space-between"}
+        //  padding={2}
+      >
         <Stack direction={"row"} spacing={2}>
           <StyledButton
             name="All Sessions"
