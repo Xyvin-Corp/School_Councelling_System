@@ -6,15 +6,22 @@ import {
   activeSessionData,
 } from "../../../assets/json/ActiveSessionData";
 import { ReactComponent as FilterIcon } from "../../../assets/icons/FilterIcon.svg";
+import { ReactComponent as CalendarIcon } from "../../../assets/icons/CalendarIcon.svg";
+import { ReactComponent as DashboardIcon } from "../../../assets/icons/DashboardIcon.svg";
 import { useNavigate } from "react-router-dom";
 import StyledTable from "../../../ui/StyledTable";
+import BigCalendar from "../../../ui/BigCalendar";
 const UpcomingSession = () => {
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedRows, setSelectedRows] = useState([]);
   const [filterOpen, setFilterOpen] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
   const handleOpenFilter = () => {
     setFilterOpen(true);
+  };
+  const handleOpenCalendar = () => {
+    setCalendarOpen(!calendarOpen);
   };
 
   const handleCloseFilter = () => {
@@ -66,14 +73,35 @@ const UpcomingSession = () => {
               >
                 <FilterIcon />
               </Box>
+              <Box
+                bgcolor={"#FFFFFF"}
+                borderRadius={"50%"}
+                width={"48px"}
+                height={"48px"}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                border="1px solid rgba(0, 0, 0, 0.12)"
+                onClick={handleOpenCalendar}
+                style={{ cursor: "pointer" }}
+              >
+                {" "}
+                {calendarOpen ?<DashboardIcon /> : <CalendarIcon /> }
+              </Box>
             </Stack>
           </Stack>
-          <StyledTable
-            columns={activeSessionColumns}
-            data={activeSessionData}
-            onSelectionChange={handleSelectionChange}
-            onView={handleView}
-          />
+          {calendarOpen ? (
+            <Box bgcolor={"white"} padding={4}>
+              <BigCalendar />
+            </Box>
+          ) : (
+            <StyledTable
+              columns={activeSessionColumns}
+              data={activeSessionData}
+              onSelectionChange={handleSelectionChange}
+              onView={handleView}
+            />
+          )}
         </>
       </Box>
     </>

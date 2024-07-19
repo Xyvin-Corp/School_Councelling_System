@@ -42,7 +42,11 @@ const subNavigation = [
     to: "/counselor/upcomminSession",
     icon: <BookingIcon />,
   },
-  { name: "Add Availability", to: "/counselor/session", icon: <EventIcon /> },
+  {
+    name: "Add Availability",
+    to: "/counselor/addavailability",
+    icon: <EventIcon />,
+  },
   { name: "Sessions", to: "/counselor/session", icon: <EventIcon /> },
   { name: "Reports", to: "/counselor/report", icon: <ReportIcon /> },
   { name: "Events", to: "/counselor/event", icon: <TeacherIcon /> },

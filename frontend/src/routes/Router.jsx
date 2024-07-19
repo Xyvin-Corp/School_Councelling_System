@@ -27,6 +27,7 @@ import CounselorReport from "../pages/Counselor/Report/CounselorReport";
 import CounselorEvent from "../pages/Counselor/Event/CounselorEvent";
 import CounselorSettings from "../pages/Counselor/CounselorSettings";
 import UpcomingSessionSinglePge from "../pages/Counselor/UpcomingSession/UpcomingSessionSinglePge";
+import AddAvailability from "../pages/Counselor/AddAvailability/AddAvailability";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -193,6 +194,14 @@ const router = createBrowserRouter([
     element: (
       <CounselorLayout>
         <UpcomingSessionSinglePge />
+      </CounselorLayout>
+    ),
+  },
+  {
+    path: "/counselor/addavailability",
+    element: (
+      <CounselorLayout>
+        <AddAvailability />
       </CounselorLayout>
     ),
   },

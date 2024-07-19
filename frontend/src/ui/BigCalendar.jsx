@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { Box } from "@mui/material";
 
 const localizer = momentLocalizer(moment);
 
@@ -20,15 +21,16 @@ const BigCalendar = () => {
   ]);
 
   return (
-    <div style={{ height: "500px" }}>
+    <Box >
       <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
+        
         style={{ height: 500 }}
       />
-    </div>
+    </Box>
   );
 };
 
