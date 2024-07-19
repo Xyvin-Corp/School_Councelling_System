@@ -47,7 +47,7 @@ const AddCounselor = () => {
               rules={{ required: "Name is required" }}
               render={({ field }) => (
                 <>
-                  <StyledInput placeholder="Enter Full Name"  />{" "}
+                  <StyledInput placeholder="Enter Full Name"  {...field} />{" "}
                   {errors.name && (
                     <span style={{ color: "red" }}>{errors.name.message}</span>
                   )}{" "}
