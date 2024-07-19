@@ -20,6 +20,7 @@ import Review from "./components/Review";
 import BookAppointment from "./components/BookAppointmentForm";
 import DropZone from "./ui/DropZone";
 import AddEntry from "./components/AddEntry";
+import AddSession from "./components/AddSession";
 
 
 function App() {
@@ -76,11 +77,14 @@ function App() {
       <StyledSwitch checked={isChecked} onChange={handleSwitchChange} />
       <CouncellingCard />
       <DescriptionCard />
-      <AddEntry />
+   
       <UserCard /> <Reviewcard /> <Review /> <DashboardCard />
       <CaseCard />
-      <BookAppointment></BookAppointment>
+     
       <DropZone/>
+      <AddSession/>
+      <AddEntry />
+      <BookAppointment></BookAppointment>
     </>
   );
 }
