@@ -4,12 +4,7 @@ import { Box, Stack, Grid, Button, styled } from '@mui/material';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
-const MainBox = styled(Box)(({ theme }) => ({
-  backgroundColor: 'white',
-  padding: '20px',
-  borderRadius: '8px',
-  boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-}));
+
 
 const StyledDropzone = styled(Box)(({ theme, isDragActive }) => ({
   backgroundColor: '#E0E0E0',
@@ -109,7 +104,7 @@ export default function DropZone() {
   };
 
   return (
-    <MainBox>
+    <>
       <Stack spacing={2}>
         <StyledDropzone {...getRootProps()} isDragActive={isDragActive}>
           <input {...getInputProps()} />
@@ -152,6 +147,6 @@ export default function DropZone() {
       >
         Download Sample
       </DownloadButton>
-    </MainBox>
+    </>
   );
 }
