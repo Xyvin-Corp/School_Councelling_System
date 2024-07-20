@@ -28,7 +28,7 @@ const SessionSinglePage = () => {
           Cases / Case ID / Session No
         </Typography>
       </Box>
-      <Grid container spacing={2} padding={4}>
+      <Grid container spacing={6} padding={4}>
         <Grid item md={4}>
           <Stack marginBottom={4}> <Box marginBottom={4}>
             <Typography variant="h6" fontWeight="900" color={"#828282"}>
@@ -42,7 +42,7 @@ const SessionSinglePage = () => {
             <UserCard user={counselorData} />
           </Stack>
         </Grid>
-        <Grid item md={8}>
+        <Grid item md={6}>
           <CaseCard />
         </Grid>
         <Grid item md={4}>

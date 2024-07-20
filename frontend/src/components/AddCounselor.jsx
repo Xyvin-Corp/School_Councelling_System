@@ -30,7 +30,7 @@ const AddCounselor = () => {
   return (
     <Box bgcolor={"white"} padding={3} width={"804px"}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
           <Grid item md={6}>
             <Typography
               sx={{ marginBottom: 1 }}
@@ -201,7 +201,7 @@ const AddCounselor = () => {
               render={({ field }) => (
                 <>
                   <StyledMultilineTextField
-                    {...field}
+                    {...field}rows={8}
                     placeholder={"Add Description in less than 500 words"}
                   />{" "}
                   {errors.description && (

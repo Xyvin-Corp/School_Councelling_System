@@ -348,7 +348,7 @@ export default function AddEvent() {
                 <>
                   <StyledMultilineTextField
                     label="Add Description in less than 500 words"
-                    rows={4}
+                    rows={5}
                     {...field}
                   />
                   {errors.description && (
